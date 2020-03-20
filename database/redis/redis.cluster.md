@@ -1,0 +1,520 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+在此感谢 [@redis](https://redis.io/)
+
+[redis-4.0.14.tar.gz](http://download.redis.io/releases/redis-4.0.14.tar.gz)
+
+[redis-5.0.8.tar.gz](http://download.redis.io/releases/redis-5.0.8.tar.gz)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+
+~~~
+[root@docker opt]# vi redis.conf
+port 6379
+bind 0.0.0.0
+daemonize yes                            # 后台运行
+protected-mode no                        # 保护模式
+maxmemory 1GB                            # 最大使用内存数,1K表示1000字节,1KB表示1024字节
+pidfile /var/run/redis_6379.pid
+loglevel notice                          # [debug,verbose,notice,warning]
+logfile "/var/log/redis/redis.log"
+dir /home/redis
+
+cluster-enabled yes                      # 开启集群
+cluster-config-file nodes-6379.conf      # 集群配置文件自动生成
+cluster-node-timeout 15000               # 节点超时时间
+cluster-require-full-coverage no         # 从库进行故障恢复时集群是否可用
+
+appendonly yes
+appendfilename "appendonly.aof"
+appendfsync everysec                     # 备份频率 [no,always,everysec]
+
+dbfilename dump.rdb
+rdbcompression yes                       # 文件压缩
+rdbchecksum yes                          # 数据校验
+save 900 1
+save 300 10
+save 60 10000
+~~~
+
+## redis-4.0.14
+
+~~~
+// 安装依赖
+[root@docker opt]# yum install -y gcc gcc-c++ make openssl-devel
+// 解压ruby
+[root@docker opt]# tar zxf ruby-2.7.0.tar.gz
+[root@docker opt]# cd ruby-2.7.0
+// 配置ruby安装目录
+[root@docker ruby-2.7.0]# ./configure --prefix=/usr/local/
+// 编译安装
+[root@docker ruby-2.7.0]# make && make install
+// 软连接
+[root@docker ruby-2.7.0]# ln -s /usr/local/ruby/bin/ruby /usr/bin/ruby
+[root@docker ruby-2.7.0]# ln -s /usr/local/ruby/bin/gem /usr/bin/gem
+[root@docker ruby-2.7.0]# ln -s /usr/local/ruby/bin/bundler /usr/bin/bundler
+[root@docker ruby-2.7.0]# ln -s /usr/local/ruby/bin/bundle /usr/bin/bundle
+// 查看软连接
+[root@docker ruby-2.7.0]# ll /usr/bin/ruby
+lrwxrwxrwx 1 root root 24 Mar 18 16:30 /usr/bin/ruby -> /usr/local/ruby/bin/ruby
+[root@docker ruby-2.7.0]# ll /usr/bin/gem
+lrwxrwxrwx 1 root root 23 Mar 18 16:31 /usr/bin/gem -> /usr/local/ruby/bin/gem
+[root@docker ruby-2.7.0]# ll /usr/bin/bundler
+lrwxrwxrwx 1 root root 27 Mar 18 16:32 /usr/bin/bundler -> /usr/local/ruby/bin/bundler
+[root@docker ruby-2.7.0]# ll /usr/bin/bundle
+lrwxrwxrwx 1 root root 27 Mar 18 16:33 /usr/bin/bundle -> /usr/local/ruby/bin/bundle
+// gem配置清华源
+[root@docker ruby-2.7.0]# gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+https://mirrors.tuna.tsinghua.edu.cn/rubygems/ added to sources
+https://rubygems.org/ removed from sources
+// 查看源列表
+[root@docker ruby-2.7.0]# gem sources -l
+*** CURRENT SOURCES ***
+
+https://mirrors.tuna.tsinghua.edu.cn/rubygems/
+// bundle配置清华源
+[root@docker ruby-2.7.0]# bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+// 安装redis
+[root@docker ruby-2.7.0]# gem install redis
+Fetching redis-4.1.3.gem
+Successfully installed redis-4.1.3
+Parsing documentation for redis-4.1.3
+Installing ri documentation for redis-4.1.3
+Done installing documentation for redis after 0 seconds
+1 gem installed
+// 查看安装的redis
+[root@docker ruby-2.7.0]# gem list | grep redis
+redis (4.1.3)
+// 创建redis.conf目录
+[root@docker ruby-2.7.0]# mkdir /opt/redis_conf
+[root@docker ruby-2.7.0]# cd /opt/redis_conf
+// 编辑redis.conf
+[root@docker redis_conf]# vi 6379.conf
+port 6379
+bind 0.0.0.0
+daemonize yes
+protected-mode no
+maxmemory 1GB
+pidfile /var/run/redis_6379.pid
+loglevel notice
+logfile "/var/log/redis/redis_6379.log"
+dir /home/redis_6379
+
+cluster-enabled yes
+cluster-config-file nodes-6379.conf
+cluster-node-timeout 15000
+cluster-require-full-coverage no
+[root@docker redis_conf]# vi 6380.conf
+[root@docker redis_conf]# vi 6381.conf
+[root@docker redis_conf]# vi 6382.conf
+[root@docker redis_conf]# vi 6383.conf
+[root@docker redis_conf]# vi 6384.conf
+[root@docker redis_conf]# ll
+total 24
+-rw-r--r-- 1 root root 430 Mar 19 09:04 6379.conf
+-rw-r--r-- 1 root root 429 Mar 19 09:05 6380.conf
+-rw-r--r-- 1 root root 429 Mar 19 09:06 6381.conf
+-rw-r--r-- 1 root root 429 Mar 19 09:07 6382.conf
+-rw-r--r-- 1 root root 429 Mar 19 09:07 6383.conf
+-rw-r--r-- 1 root root 429 Mar 19 09:08 6384.conf
+[root@docker redis_conf]# 
+// 解压文件
+[root@docker opt]# tar zxf redis-4.0.14.tar.gz
+[root@docker opt]# cd redis-4.0.14
+// 编译
+[root@docker redis-4.0.14]# make
+// 创建日志目录和日志文件
+[root@docker log]# mkdir /var/log/redis
+[root@docker log]# touch /var/log/redis/redis_6379.log
+[root@docker log]# touch /var/log/redis/redis_6380.log
+[root@docker log]# touch /var/log/redis/redis_6381.log
+[root@docker log]# touch /var/log/redis/redis_6382.log
+[root@docker log]# touch /var/log/redis/redis_6383.log
+[root@docker log]# touch /var/log/redis/redis_6384.log
+// 创建数据目录
+[root@docker home]# mkdir /home/redis_6379
+[root@docker home]# mkdir /home/redis_6380
+[root@docker home]# mkdir /home/redis_6381
+[root@docker home]# mkdir /home/redis_6382
+[root@docker home]# mkdir /home/redis_6383
+[root@docker home]# mkdir /home/redis_6384
+// 进入程序目录
+[root@docker home]# cd /opt/redis-4.0.14/src/
+// 启动服务
+[root@docker src]# ./redis-server /opt/redis_conf/6379.conf
+[root@docker src]# ps -ef | grep redis
+root      34127      1  0 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6379 [cluster]
+root      34138   1669  0 10:14 pts/0    00:00:00 grep --color=auto redis
+[root@docker src]# ./redis-server /opt/redis_conf/6380.conf
+[root@docker src]# ./redis-server /opt/redis_conf/6381.conf
+[root@docker src]# ./redis-server /opt/redis_conf/6382.conf
+[root@docker src]# ./redis-server /opt/redis_conf/6383.conf
+[root@docker src]# ./redis-server /opt/redis_conf/6384.conf
+[root@docker src]# ps -ef | grep redis
+root      34127      1  0 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6379 [cluster]
+root      34154      1  0 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6380 [cluster]
+root      34162      1  0 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6381 [cluster]
+root      34172      1  0 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6382 [cluster]
+root      34180      1  0 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6383 [cluster]
+root      34189      1  1 10:14 ?        00:00:00 ./redis-server 0.0.0.0:6384 [cluster]
+root      34204   1669  0 10:15 pts/0    00:00:00 grep --color=auto redis
+// 查看节点信息(都是单节点)
+[root@docker src]# ./redis-cli -p 6379 cluster nodes
+c2c96abf63ae55bca921aa31ba22c1d2e13cce51 :6379@16379 myself,master - 0 0 0 connected
+[root@docker src]# ./redis-cli -p 6380 cluster nodes
+6610042cdbc09d1bac080148bf5c67fdba843dc4 :6380@16380 myself,master - 0 0 0 connected
+[root@docker src]# ./redis-cli -p 6381 cluster nodes
+3ddef109e85cdfb59290479c9ac3052ba9c6955f :6381@16381 myself,master - 0 0 0 connected
+[root@docker src]# ./redis-cli -p 6382 cluster nodes
+6d484b8f495524ad2e166465a12a609e38a1af62 :6382@16382 myself,master - 0 0 0 connected
+[root@docker src]# ./redis-cli -p 6383 cluster nodes
+e20432b915038005ac11c5c726b96e74133db4b8 :6383@16383 myself,master - 0 0 0 connected
+[root@docker src]# ./redis-cli -p 6384 cluster nodes
+d4fb2b9b5708d8004cbc0267490957b77246fa9b :6384@16384 myself,master - 0 0 0 connected
+// 使用redis-trib.rb创建集群
+[root@docker src]# ./redis-trib.rb create --replicas 1 127.0.0.1:6379 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382 127.0.0.1:6383 127.0.0.1:6384
+>>> Creating cluster
+>>> Performing hash slots allocation on 6 nodes...
+Using 3 masters:
+127.0.0.1:6379
+127.0.0.1:6380
+127.0.0.1:6381
+Adding replica 127.0.0.1:6383 to 127.0.0.1:6379
+Adding replica 127.0.0.1:6384 to 127.0.0.1:6380
+Adding replica 127.0.0.1:6382 to 127.0.0.1:6381
+>>> Trying to optimize slaves allocation for anti-affinity
+[WARNING] Some slaves are in the same host as their master
+M: c2c96abf63ae55bca921aa31ba22c1d2e13cce51 127.0.0.1:6379
+   slots:0-5460 (5461 slots) master
+M: 6610042cdbc09d1bac080148bf5c67fdba843dc4 127.0.0.1:6380
+   slots:5461-10922 (5462 slots) master
+M: 3ddef109e85cdfb59290479c9ac3052ba9c6955f 127.0.0.1:6381
+   slots:10923-16383 (5461 slots) master
+S: 6d484b8f495524ad2e166465a12a609e38a1af62 127.0.0.1:6382
+   replicates 6610042cdbc09d1bac080148bf5c67fdba843dc4
+S: e20432b915038005ac11c5c726b96e74133db4b8 127.0.0.1:6383
+   replicates 3ddef109e85cdfb59290479c9ac3052ba9c6955f
+S: d4fb2b9b5708d8004cbc0267490957b77246fa9b 127.0.0.1:6384
+   replicates c2c96abf63ae55bca921aa31ba22c1d2e13cce51
+Can I set the above configuration? (type 'yes' to accept): yes
+>>> Nodes configuration updated
+>>> Assign a different config epoch to each node
+>>> Sending CLUSTER MEET messages to join the cluster
+Waiting for the cluster to join.
+>>> Performing Cluster Check (using node 127.0.0.1:6379)
+M: c2c96abf63ae55bca921aa31ba22c1d2e13cce51 127.0.0.1:6379
+   slots:0-5460 (5461 slots) master
+   1 additional replica(s)
+S: e20432b915038005ac11c5c726b96e74133db4b8 127.0.0.1:6383
+   slots: (0 slots) slave
+   replicates 3ddef109e85cdfb59290479c9ac3052ba9c6955f
+S: 6d484b8f495524ad2e166465a12a609e38a1af62 127.0.0.1:6382
+   slots: (0 slots) slave
+   replicates 6610042cdbc09d1bac080148bf5c67fdba843dc4
+S: d4fb2b9b5708d8004cbc0267490957b77246fa9b 127.0.0.1:6384
+   slots: (0 slots) slave
+   replicates c2c96abf63ae55bca921aa31ba22c1d2e13cce51
+M: 6610042cdbc09d1bac080148bf5c67fdba843dc4 127.0.0.1:6380
+   slots:5461-10922 (5462 slots) master
+   1 additional replica(s)
+M: 3ddef109e85cdfb59290479c9ac3052ba9c6955f 127.0.0.1:6381
+   slots:10923-16383 (5461 slots) master
+   1 additional replica(s)
+[OK] All nodes agree about slots configuration.
+>>> Check for open slots...
+>>> Check slots coverage...
+[OK] All 16384 slots covered.
+// 查看集群信息
+[root@docker src]# ./redis-cli -p 6379 cluster nodes
+e20432b915038005ac11c5c726b96e74133db4b8 127.0.0.1:6383@16383 slave 3ddef109e85cdfb59290479c9ac3052ba9c6955f 0 1584584413413 5 connected
+c2c96abf63ae55bca921aa31ba22c1d2e13cce51 127.0.0.1:6379@16379 myself,master - 0 1584584412000 1 connected 0-5460
+6d484b8f495524ad2e166465a12a609e38a1af62 127.0.0.1:6382@16382 slave 6610042cdbc09d1bac080148bf5c67fdba843dc4 0 1584584414425 4 connected
+d4fb2b9b5708d8004cbc0267490957b77246fa9b 127.0.0.1:6384@16384 slave c2c96abf63ae55bca921aa31ba22c1d2e13cce51 0 1584584414000 6 connected
+6610042cdbc09d1bac080148bf5c67fdba843dc4 127.0.0.1:6380@16380 master - 0 1584584415435 2 connected 5461-10922
+3ddef109e85cdfb59290479c9ac3052ba9c6955f 127.0.0.1:6381@16381 master - 0 1584584412401 3 connected 10923-16383
+// 查看集群启动的进程和端口
+[root@docker src]# ps -ef | grep redis
+root      34127      1  0 10:14 ?        00:00:01 ./redis-server 0.0.0.0:6379 [cluster]
+root      34154      1  0 10:14 ?        00:00:01 ./redis-server 0.0.0.0:6380 [cluster]
+root      34162      1  0 10:14 ?        00:00:01 ./redis-server 0.0.0.0:6381 [cluster]
+root      34172      1  0 10:14 ?        00:00:01 ./redis-server 0.0.0.0:6382 [cluster]
+root      34180      1  0 10:14 ?        00:00:01 ./redis-server 0.0.0.0:6383 [cluster]
+root      34189      1  0 10:14 ?        00:00:01 ./redis-server 0.0.0.0:6384 [cluster]
+root      34555   1669  0 10:21 pts/0    00:00:00 grep --color=auto redis
+[root@docker src]# ss -lnp | grep 34127
+tcp    LISTEN     0      128       *:16379                 *:*                   users:(("redis-server",pid=34127,fd=8))
+tcp    LISTEN     0      128       *:6379                  *:*                   users:(("redis-server",pid=34127,fd=6))
+[root@docker src]# ss -lnp | grep 34154
+tcp    LISTEN     0      128       *:16380                 *:*                   users:(("redis-server",pid=34154,fd=8))
+tcp    LISTEN     0      128       *:6380                  *:*                   users:(("redis-server",pid=34154,fd=6))
+[root@docker src]# ss -lnp | grep 34162
+tcp    LISTEN     0      128       *:16381                 *:*                   users:(("redis-server",pid=34162,fd=8))
+tcp    LISTEN     0      128       *:6381                  *:*                   users:(("redis-server",pid=34162,fd=6))
+[root@docker src]# ss -lnp | grep 34172
+tcp    LISTEN     0      128       *:16382                 *:*                   users:(("redis-server",pid=34172,fd=8))
+tcp    LISTEN     0      128       *:6382                  *:*                   users:(("redis-server",pid=34172,fd=6))
+[root@docker src]# ss -lnp | grep 34180
+tcp    LISTEN     0      128       *:16383                 *:*                   users:(("redis-server",pid=34180,fd=8))
+tcp    LISTEN     0      128       *:6383                  *:*                   users:(("redis-server",pid=34180,fd=6))
+[root@docker src]# ss -lnp | grep 34189
+tcp    LISTEN     0      128       *:16384                 *:*                   users:(("redis-server",pid=34189,fd=8))
+tcp    LISTEN     0      128       *:6384                  *:*                   users:(("redis-server",pid=34189,fd=6))
+[root@docker src]# ./redis-trib.rb
+Usage: redis-trib <command> <options> <arguments ...>
+
+  create          host1:port1 ... hostN:portN
+                  --replicas <arg>
+  check           host:port
+  info            host:port
+  fix             host:port
+                  --timeout <arg>
+  reshard         host:port
+                  --from <arg>
+                  --to <arg>
+                  --slots <arg>
+                  --yes
+                  --timeout <arg>
+                  --pipeline <arg>
+  rebalance       host:port
+                  --weight <arg>
+                  --auto-weights
+                  --use-empty-masters
+                  --timeout <arg>
+                  --simulate
+                  --pipeline <arg>
+                  --threshold <arg>
+  add-node        new_host:new_port existing_host:existing_port
+                  --slave
+                  --master-id <arg>
+  del-node        host:port node_id
+  set-timeout     host:port milliseconds
+  call            host:port command arg arg .. arg
+  import          host:port
+                  --from <arg>
+                  --copy
+                  --replace
+  help            (show this help)
+
+For check, fix, reshard, del-node, set-timeout you can specify the host and port of any working node in the cluster.
+// 检查集群状态
+[root@docker src]# ./redis-trib.rb check 127.0.0.1:6379
+>>> Performing Cluster Check (using node 127.0.0.1:6379)
+M: c2c96abf63ae55bca921aa31ba22c1d2e13cce51 127.0.0.1:6379
+   slots:0-5460 (5461 slots) master
+   1 additional replica(s)
+S: e20432b915038005ac11c5c726b96e74133db4b8 127.0.0.1:6383
+   slots: (0 slots) slave
+   replicates 3ddef109e85cdfb59290479c9ac3052ba9c6955f
+S: 6d484b8f495524ad2e166465a12a609e38a1af62 127.0.0.1:6382
+   slots: (0 slots) slave
+   replicates 6610042cdbc09d1bac080148bf5c67fdba843dc4
+S: d4fb2b9b5708d8004cbc0267490957b77246fa9b 127.0.0.1:6384
+   slots: (0 slots) slave
+   replicates c2c96abf63ae55bca921aa31ba22c1d2e13cce51
+M: 6610042cdbc09d1bac080148bf5c67fdba843dc4 127.0.0.1:6380
+   slots:5461-10922 (5462 slots) master
+   1 additional replica(s)
+M: 3ddef109e85cdfb59290479c9ac3052ba9c6955f 127.0.0.1:6381
+   slots:10923-16383 (5461 slots) master
+   1 additional replica(s)
+[OK] All nodes agree about slots configuration.
+>>> Check for open slots...
+>>> Check slots coverage...
+[OK] All 16384 slots covered.
+// 查看集群信息
+[root@docker src]# ./redis-trib.rb info 127.0.0.1:6379
+127.0.0.1:6379 (c2c96abf...) -> 0 keys | 5461 slots | 1 slaves.
+127.0.0.1:6380 (6610042c...) -> 0 keys | 5462 slots | 1 slaves.
+127.0.0.1:6381 (3ddef109...) -> 0 keys | 5461 slots | 1 slaves.
+[OK] 0 keys in 3 masters.
+0.00 keys per slot on average.
+[root@docker src]#
+~~~
+
+## redis-5.0.8
+
+~~~
+[root@docker src]# cd /opt/redis-5.0.8
+[root@docker redis-5.0.8]# make
+[root@docker redis-5.0.8]# cd src/
+// 已经不再推荐使用此脚本(不需安装ruby)
+[root@docker src]# ./redis-trib.rb
+WARNING: redis-trib.rb is not longer available!
+You should use redis-cli instead.
+
+All commands and features belonging to redis-trib.rb have been moved
+to redis-cli.
+In order to use them you should call redis-cli with the --cluster
+option followed by the subcommand name, arguments and options.
+
+Use the following syntax:
+redis-cli --cluster SUBCOMMAND [ARGUMENTS] [OPTIONS]
+
+Example:
+redis-cli --cluster info 127.0.0.1:7000
+
+To get help about all subcommands, type:
+redis-cli --cluster help
+
+[root@docker src]# 
+[root@docker src]# ./redis-cli --help
+redis-cli 5.0.8
+
+Usage: redis-cli [OPTIONS] [cmd [arg [arg ...]]]
+  -h <hostname>      Server hostname (default: 127.0.0.1).
+  -p <port>          Server port (default: 6379).
+  -s <socket>        Server socket (overrides hostname and port).
+  -a <password>      Password to use when connecting to the server.
+                     You can also use the REDISCLI_AUTH environment
+                     variable to pass this password more safely
+                     (if both are used, this argument takes predecence).
+  -u <uri>           Server URI.
+  -r <repeat>        Execute specified command N times.
+  -i <interval>      When -r is used, waits <interval> seconds per command.
+                     It is possible to specify sub-second times like -i 0.1.
+  -n <db>            Database number.
+  -x                 Read last argument from STDIN.
+  -d <delimiter>     Multi-bulk delimiter in for raw formatting (default: \n).
+  -c                 Enable cluster mode (follow -ASK and -MOVED redirections).
+  --raw              Use raw formatting for replies (default when STDOUT is
+                     not a tty).
+  --no-raw           Force formatted output even when STDOUT is not a tty.
+  --csv              Output in CSV format.
+  --stat             Print rolling stats about server: mem, clients, ...
+  --latency          Enter a special mode continuously sampling latency.
+                     If you use this mode in an interactive session it runs
+                     forever displaying real-time stats. Otherwise if --raw or
+                     --csv is specified, or if you redirect the output to a non
+                     TTY, it samples the latency for 1 second (you can use
+                     -i to change the interval), then produces a single output
+                     and exits.
+  --latency-history  Like --latency but tracking latency changes over time.
+                     Default time interval is 15 sec. Change it using -i.
+  --latency-dist     Shows latency as a spectrum, requires xterm 256 colors.
+                     Default time interval is 1 sec. Change it using -i.
+  --lru-test <keys>  Simulate a cache workload with an 80-20 distribution.
+  --replica          Simulate a replica showing commands received from the master.
+  --rdb <filename>   Transfer an RDB dump from remote server to local file.
+  --pipe             Transfer raw Redis protocol from stdin to server.
+  --pipe-timeout <n> In --pipe mode, abort with error if after sending all data.
+                     no reply is received within <n> seconds.
+                     Default timeout: 30. Use 0 to wait forever.
+  --bigkeys          Sample Redis keys looking for keys with many elements (complexity).
+  --memkeys          Sample Redis keys looking for keys consuming a lot of memory.
+  --memkeys-samples <n> Sample Redis keys looking for keys consuming a lot of memory.
+                     And define number of key elements to sample
+  --hotkeys          Sample Redis keys looking for hot keys.
+                     only works when maxmemory-policy is *lfu.
+  --scan             List all keys using the SCAN command.
+  --pattern <pat>    Useful with --scan to specify a SCAN pattern.
+  --intrinsic-latency <sec> Run a test to measure intrinsic system latency.
+                     The test will run for the specified amount of seconds.
+  --eval <file>      Send an EVAL command using the Lua script at <file>.
+  --ldb              Used with --eval enable the Redis Lua debugger.
+  --ldb-sync-mode    Like --ldb but uses the synchronous Lua debugger, in
+                     this mode the server is blocked and script changes are
+                     not rolled back from the server memory.
+  --cluster <command> [args...] [opts...]
+                     Cluster Manager command and arguments (see below).
+  --verbose          Verbose mode.
+  --no-auth-warning  Don't show warning message when using password on command
+                     line interface.
+  --help             Output this help and exit.
+  --version          Output version and exit.
+
+Cluster Manager Commands:
+  Use --cluster help to list all available cluster manager commands.
+
+Examples:
+  cat /etc/passwd | redis-cli -x set mypasswd
+  redis-cli get mypasswd
+  redis-cli -r 100 lpush mylist x
+  redis-cli -r 100 -i 1 info | grep used_memory_human:
+  redis-cli --eval myscript.lua key1 key2 , arg1 arg2 arg3
+  redis-cli --scan --pattern '*:12345*'
+
+  (Note: when using --eval the comma separates KEYS[] from ARGV[] items)
+
+When no command is given, redis-cli starts in interactive mode.
+Type "help" in interactive mode for information on available commands
+and settings.
+
+[root@docker src]# 
+[root@docker src]# ./redis-cli --cluster help
+Cluster Manager Commands:
+  create         host1:port1 ... hostN:portN
+                 --cluster-replicas <arg>
+  check          host:port
+                 --cluster-search-multiple-owners
+  info           host:port
+  fix            host:port
+                 --cluster-search-multiple-owners
+  reshard        host:port
+                 --cluster-from <arg>
+                 --cluster-to <arg>
+                 --cluster-slots <arg>
+                 --cluster-yes
+                 --cluster-timeout <arg>
+                 --cluster-pipeline <arg>
+                 --cluster-replace
+  rebalance      host:port
+                 --cluster-weight <node1=w1...nodeN=wN>
+                 --cluster-use-empty-masters
+                 --cluster-timeout <arg>
+                 --cluster-simulate
+                 --cluster-pipeline <arg>
+                 --cluster-threshold <arg>
+                 --cluster-replace
+  add-node       new_host:new_port existing_host:existing_port
+                 --cluster-slave
+                 --cluster-master-id <arg>
+  del-node       host:port node_id
+  call           host:port command arg arg .. arg
+  set-timeout    host:port milliseconds
+  import         host:port
+                 --cluster-from <arg>
+                 --cluster-copy
+                 --cluster-replace
+  help
+
+For check, fix, reshard, del-node, set-timeout you can specify the host and port of any working node in the cluster.
+
+// redis-cli创建集群(不需安装ruby)
+[root@docker src]# ./redis-cli --cluster create --cluster-replicas 1 127.0.0.1:6379 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382 127.0.0.1:6383 127.0.0.1:6384
+[root@docker src]# ./redis-cli --cluster check 127.0.0.1:6379
+127.0.0.1:6379 (c2c96abf...) -> 0 keys | 5461 slots | 1 slaves.
+127.0.0.1:6380 (6610042c...) -> 0 keys | 5462 slots | 1 slaves.
+127.0.0.1:6381 (3ddef109...) -> 0 keys | 5461 slots | 1 slaves.
+[OK] 0 keys in 3 masters.
+0.00 keys per slot on average.
+>>> Performing Cluster Check (using node 127.0.0.1:6379)
+M: c2c96abf63ae55bca921aa31ba22c1d2e13cce51 127.0.0.1:6379
+   slots:[0-5460] (5461 slots) master
+   1 additional replica(s)
+S: e20432b915038005ac11c5c726b96e74133db4b8 127.0.0.1:6383
+   slots: (0 slots) slave
+   replicates 3ddef109e85cdfb59290479c9ac3052ba9c6955f
+S: 6d484b8f495524ad2e166465a12a609e38a1af62 127.0.0.1:6382
+   slots: (0 slots) slave
+   replicates 6610042cdbc09d1bac080148bf5c67fdba843dc4
+S: d4fb2b9b5708d8004cbc0267490957b77246fa9b 127.0.0.1:6384
+   slots: (0 slots) slave
+   replicates c2c96abf63ae55bca921aa31ba22c1d2e13cce51
+M: 6610042cdbc09d1bac080148bf5c67fdba843dc4 127.0.0.1:6380
+   slots:[5461-10922] (5462 slots) master
+   1 additional replica(s)
+M: 3ddef109e85cdfb59290479c9ac3052ba9c6955f 127.0.0.1:6381
+   slots:[10923-16383] (5461 slots) master
+   1 additional replica(s)
+[OK] All nodes agree about slots configuration.
+>>> Check for open slots...
+>>> Check slots coverage...
+[OK] All 16384 slots covered.
+[root@docker src]# ./redis-cli --cluster info 127.0.0.1:6379
+127.0.0.1:6379 (c2c96abf...) -> 0 keys | 5461 slots | 1 slaves.
+127.0.0.1:6380 (6610042c...) -> 0 keys | 5462 slots | 1 slaves.
+127.0.0.1:6381 (3ddef109...) -> 0 keys | 5461 slots | 1 slaves.
+[OK] 0 keys in 3 masters.
+0.00 keys per slot on average.
+[root@docker src]#
+~~~

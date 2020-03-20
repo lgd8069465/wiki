@@ -1,0 +1,162 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+在此感谢 [@elastic](https://www.elastic.co/cn/) 和 [@oracle](https://www.oracle.com/index.html)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+
+[elasticsearch-7.3.2-no-jdk-linux-x86_64.tar.gz](https://www.elastic.co/cn/downloads/past-releases/elasticsearch-no-jdk-7-3-2)
+
+[jdk-8u221-linux-x64.tar.gz](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+本文档同样适用于[elasticsearch-oss-7.3.2-no-jdk-linux-x86_64.tar.gz](https://www.elastic.co/cn/downloads/past-releases/elasticsearch-oss-no-jdk-7-3-2)
+
+版本差异详见[此处](https://www.elastic.co/cn/subscriptions)
+~~~
+// 操作系统版本
+[root@docker opt]# cat /etc/centos-release
+CentOS Linux release 7.7.1908 (Core)
+// 关闭selinux
+[root@docker opt]# vi /etc/selinux/config
+SELINUX=disabled
+// 重启
+[root@docker opt]# reboot
+// 设置主机名
+[root@docker opt]# vi /etc/hostname
+docker
+// 查看IP
+[root@docker opt]# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:0c:29:1c:6e:f5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.192.129/24 brd 192.168.192.255 scope global noprefixroute ens33
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e7f8:8f77:9df8:ed25/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 02:42:85:25:9c:dc brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+// 设置hosts
+[root@docker opt]# vi /etc/hosts
+192.168.192.129 docker
+// 关闭防火墙
+[root@docker opt]# systemctl stop firewalld
+// 关闭自启动防火墙
+[root@docker opt]# systemctl disable firewalld
+// 解压软件
+[root@docker opt]# tar zxf elasticsearch-7.3.2-no-jdk-linux-x86_64.tar.gz 
+[root@docker opt]# tar zxf jdk-8u221-linux-x64.tar.gz
+// 创建java目录
+[root@docker opt]# mkdir -pv /usr/java/
+mkdir: created directory ‘/usr/java/’
+// 移动java
+[root@docker opt]# mv jdk1.8.0_221 /usr/java/
+// 设置环境变量
+[root@docker opt]# vi /etc/profile
+export JAVA_HOME=/usr/java/jdk1.8.0_221
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$JRE_HOME/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+// 及时生效
+[root@docker opt]# source /etc/profile
+// 验证java
+[root@docker opt]# java
+[root@docker opt]# javac
+[root@docker opt]# java -version
+java version "1.8.0_221"
+Java(TM) SE Runtime Environment (build 1.8.0_221-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)
+[root@docker opt]# echo $JAVA_HOME
+/usr/java/jdk1.8.0_221
+[root@docker opt]# echo $JRE_HOME
+/usr/java/jdk1.8.0_221/jre
+// 创建es数据目录
+[root@docker opt]# mkdir -pv /home/data/es/my-application
+mkdir: created directory ‘/home/data’
+mkdir: created directory ‘/home/data/es’
+mkdir: created directory ‘/home/data/es/my-application’
+// 创建es日志目录
+[root@docker opt]# mkdir -pv /home/logs/es/my-application
+mkdir: created directory ‘/home/logs’
+mkdir: created directory ‘/home/logs/es’
+mkdir: created directory ‘/home/logs/es/my-application’
+// 编辑es配置文件
+[root@docker opt]# vi elasticsearch-7.3.2/config/elasticsearch.yml
+cluster.name: my-application                                        # 集群名称
+node.name: node-1                                                   # 当前节点名称
+path.data: /home/data/es/my-application                             # 数据目录
+path.logs: /home/logs/es/my-application                             # 日志目录
+network.host: 0.0.0.0                                               # 监听地址
+http.port: 9200                                                     # 端口
+http.cors.enabled: true                                             # 开启跨域访问
+http.cors.allow-origin: "*"                                         # 允许所有域访问
+// 设置es使用内存
+[root@docker opt]# vi elasticsearch-7.3.2/config/jvm.options
+-Xms512m
+-Xmx512m
+// 设置es使用的JAVA_HOME
+[root@docker opt]# vi elasticsearch-7.3.2/bin/elasticsearch-env
+JAVA="$ES_HOME/jdk/bin/java"
+// 修改为
+JAVA="/usr/java/jdk1.8.0_221/bin/java"
+// 添加es用户 
+[root@docker opt]# adduser es -p es
+// 更改用户和组
+[root@docker opt]# chown -R es:es /opt/elasticsearch-7.3.2
+[root@docker opt]# chown -R es:es /home/data/es/
+[root@docker opt]# chown -R es:es /home/logs/es/
+// 设置系统内核参数
+[root@docker opt]# vi /etc/sysctl.conf 
+vm.max_map_count = 262144
+vm.swappiness = 1                                                    # 最小化swap参数
+// 及时生效
+[root@docker opt]# sysctl -p
+vm.max_map_count = 262144
+vm.swappiness = 1
+// 设置资源限制参数
+[root@docker opt]# vi /etc/security/limits.conf
+es soft nofile 65536
+es hard nofile 65536
+es soft nproc 4096
+es hard nproc 4096
+es soft memlock unlimited
+es hard memlock unlimited
+// 启动es
+[root@docker opt]# su es -l -c "/opt/elasticsearch-7.3.2/bin/elasticsearch -d" 
+future versions of Elasticsearch will require Java 11; your Java version from [/usr/java/jdk1.8.0_221/jre] does not meet this requirement
+// 查看端口
+[root@docker opt]# ss -lnp | grep 9200
+tcp    LISTEN     0      128    [::]:9200               [::]:*                   users:(("java",pid=11114,fd=123))
+// 根据pid查看端口
+[root@docker opt]# ss -lnp | grep 11114
+tcp    LISTEN     0      128    [::]:9200               [::]:*                   users:(("java",pid=11114,fd=123))
+tcp    LISTEN     0      128    [::]:9300               [::]:*                   users:(("java",pid=11114,fd=114))
+// 验证es
+[root@docker opt]# curl 127.0.0.1:9200
+{
+  "name" : "node-1",
+  "cluster_name" : "my-application",
+  "cluster_uuid" : "R6yCwH2QRYqBMihDLfBD_w",
+  "version" : {
+    "number" : "7.3.2",
+    "build_flavor" : "oss",
+    "build_type" : "tar",
+    "build_hash" : "1c1faf1",
+    "build_date" : "2019-09-06T14:40:30.409026Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.1.0",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+// 开机自启动es
+[root@docker opt]# chmod +x /etc/rc.d/rc.local
+[root@docker opt]# vi /etc/rc.d/rc.local
+su es -l -c "/opt/elasticsearch-7.3.2/bin/elasticsearch -d"
+~~~
