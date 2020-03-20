@@ -102,4 +102,58 @@ server.2=192.168.192.134:2888:3888
 // 192.168.192.134
 [root@docker opt]# vi dataDir=/home/zookeeper/myid
 2
+
+// 192.168.192.128
+[root@docker conf]# /opt/apache-zookeeper-3.5.5-bin/bin/zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /opt/apache-zookeeper-3.5.5-bin/bin/../conf/zoo.cfg
+Client port found: 2181. Client address: 192.168.192.128.
+Mode: follower
+// 192.168.192.129
+[root@docker conf]# /opt/apache-zookeeper-3.5.5-bin/bin/zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /opt/apache-zookeeper-3.5.5-bin/bin/../conf/zoo.cfg
+Client port found: 2181. Client address: 192.168.192.129.
+Mode: leader
+// 192.168.192.134
+[root@docker conf]# /opt/apache-zookeeper-3.5.5-bin/bin/zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /opt/apache-zookeeper-3.5.5-bin/bin/../conf/zoo.cfg
+Client port found: 2181. Client address: 192.168.192.134.
+Mode: follower
+~~~
+## zookeeper-cluster(伪分布式)
+~~~
+[root@docker opt]# vi apache-zookeeper-3.5.5-bin1/conf/zoo.cfg
+dataDir=/home/zookeeper1
+clientPort=2182
+server.0=192.168.192.128:2888:3888
+server.1=192.168.192.129:2887:3887
+server.2=192.168.192.134:2886:3886
+// 192.168.192.128
+[root@docker opt]# vi dataDir=/home/zookeeper/myid
+0
+// 192.168.192.129
+[root@docker opt]# vi dataDir=/home/zookeeper1/myid
+1
+// 192.168.192.134
+[root@docker opt]# vi dataDir=/home/zookeeper2/myid
+2
+
+[root@docker opt]# /opt/apache-zookeeper-3.5.5-bin/bin/zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /opt/apache-zookeeper-3.5.5-bin/bin/../conf/zoo.cfg
+Client port found: 2181. Client address: localhost.
+Mode: follower
+[root@docker opt]# /opt/apache-zookeeper-3.5.5-bin1/bin/zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /opt/apache-zookeeper-3.5.5-bin1/bin/../conf/zoo.cfg
+Client port found: 2182. Client address: localhost.
+Mode: leader
+[root@docker opt]# /opt/apache-zookeeper-3.5.5-bin2/bin/zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /opt/apache-zookeeper-3.5.5-bin2/bin/../conf/zoo.cfg
+Client port found: 2183. Client address: localhost.
+Mode: follower
+[root@docker opt]#
 ~~~
