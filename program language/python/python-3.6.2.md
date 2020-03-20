@@ -1,0 +1,119 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+在此感谢 [@阿里pypi](https://opsx.alibaba.com/mirror?lang=zh-CN) [@清华pypi](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+
+[Python-3.6.2.tar.xz](https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz)
+
+~~~
+// 操作系统版本
+[root@kubernetes opt]# cat /etc/centos-release
+CentOS Linux release 7.7.1908 (Core)
+// 关闭selinux
+[root@kubernetes opt]# vi /etc/selinux/config
+SELINUX=disabled
+// 重启
+[root@kubernetes opt]# reboot
+// 解压软件
+[root@kubernetes opt]# tar xf Python-3.6.2.tar.xz 
+[root@kubernetes opt]# ll
+total 18044
+drwx--x--x  4 root root       28 Oct  9 16:40 containerd
+drwxr-xr-x 16  501  501     4096 Jul 17  2017 Python-3.6.2
+-rw-r--r--  1 root root 16907204 Oct 24 14:26 Python-3.6.2.tar.xz
+[root@kubernetes opt]# cd Python-3.6.2
+// 安装依赖包
+[root@kubernetes Python-3.6.2]# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make
+// 配置路径
+[root@kubernetes Python-3.6.2]# ./configure --prefix=/usr/local/python3
+// 编译安装
+[root@kubernetes Python-3.6.2]# make && make install
+Successfully installed pip-9.0.1 setuptools-28.8.0
+// python3软连接
+[root@kubernetes Python-3.6.2]# ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+// pip3软连接
+[root@kubernetes Python-3.6.2]# ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+// pip软连接
+[root@kubernetes Python-3.6.2]# ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
+// pip版本
+[root@kubernetes Python-3.6.2]# pip -V
+pip 9.0.1 from /usr/local/python3/lib/python3.6/site-packages (python 3.6)
+// 使用阿里开源镜像站升级pip
+[root@kubernetes Python-3.6.2]# pip install -i https://mirrors.aliyun.com/pypi/simple/ pip -U
+Successfully installed pip-19.3.1
+[root@kubernetes Python-3.6.2]# pip -V
+pip 19.3.1 from /usr/local/python3/lib/python3.6/site-packages/pip (python 3.6)
+// python版本
+[root@kubernetes Python-3.6.2]# python3 -V
+Python 3.6.2
+// 全局设置阿里pypi
+[root@kubernetes Python-3.6.2]# pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+Writing to /root/.config/pip/pip.conf
+// 在线安装django
+[root@kubernetes Python-3.6.2]# pip install pymysql pillow django==2.1.5 django-ckeditor 
+
+// 在线安装django(依赖包列表配置文件形式)
+[root@kubernetes opt]# pip install -r django.txt                      // 导出 pip freeze > django.txt
+[root@kubernetes opt]# cat django.txt  
+Django==2.1.5
+django-ckeditor==5.7.1
+django-js-asset==1.2.2
+Pillow==6.2.1
+PyMySQL==0.9.3
+pytz==2019.3
+
+// 离线wheel方式安装django(要先安装wheel包)
+// 此网站下载whl文件 https://pypi.org/project/wheel/#files
+[root@kubernetes Python-3.6.2]# pip install wheel-0.33.6-py2.py3-none-any.whl
+// 离线wheel方式安装django和相关依赖
+[root@kubernetes Python-3.6.2]# pip install PyMySQL-0.9.3-py2.py3-none-any.whl pytz-2019.3-py2.py3-none-any.whl Pillow-6.2.1-cp36-cp36m-manylinux1_x86_64.whl django_js_asset-1.2.2-py2.py3-none-any.whl django_ckeditor-5.7.1-py2.py3-none-any.whl Django-2.2.6-py3-none-any.whl
+
+// 离线source方式安装django(先安装依赖pytz，其他类似操作)
+// 此网站下载压缩包文件 https://pypi.org/project/pytz/#files
+[root@kubernetes opt]# pip install pytz-2019.3.tar.gz
+// 或者解压执行脚本安装
+[root@kubernetes opt]# tar zxf pytz-2019.3.tar.gz
+[root@kubernetes opt]# cd pytz-2019.3
+[root@kubernetes pytz-2019.3]# python3 setup.py install                // 或 ./configure --> make && make install
+
+// 在线安装uwsgi
+[root@kubernetes Python-3.6.2]# pip install uwsgi
+Successfully installed uwsgi-2.0.18
+
+// 离线source方式安装uwsgi
+// 此网站下载压缩包文件 https://pypi.org/project/uWSGI/#files
+[root@kubernetes opt]# pip install uwsgi-2.0.18.tar.gz
+// 或者解压执行脚本安装
+[root@kubernetes opt]# tar zxf uwsgi-2.0.18.tar.gz
+[root@kubernetes opt]# cd uwsgi-2.0.18
+[root@kubernetes uwsgi-2.0.18]# python3 setup.py install               // 或 ./configure --> make && make install
+
+// uwsgi软连接
+[root@kubernetes Python-3.6.2]# ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
+// uwsgi命令
+[root@kubernetes Python-3.6.2]# uwsgi
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Oct 24 14:43:36 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 24 October 2019 06:40:21
+os: Linux-3.10.0-1062.el7.x86_64 #1 SMP Wed Aug 7 18:08:02 UTC 2019
+nodename: kubernetes
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /opt/Python-3.6.2
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7183
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+The -s/--socket option is missing and stdin is not a socket.
+~~~

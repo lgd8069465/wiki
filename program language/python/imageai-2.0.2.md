@@ -1,0 +1,117 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+在此感谢 [@kangvcar](https://github.com/kangvcar) [@OlafenwaMoses](https://github.com/OlafenwaMoses)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+~~~
+// 操作系统版本
+[root@kubernetes opt]# cat /etc/centos-release
+CentOS Linux release 7.7.1908 (Core)
+// 关闭selinux
+[root@kubernetes opt]# vi /etc/selinux/config
+SELINUX=disabled
+// 重启
+[root@kubernetes opt]# reboot
+~~~
+
+// 安装依赖tensorflow(请参考[python3.6.2](python-3.6.2.md))
+
+~~~
+[root@kubernetes opt]# pip3 install --upgrade tensorflow
+// 安装依赖
+[root@kubernetes opt]# pip3 install numpy scipy opencv-python pillow matplotlib h5py keras
+// 在线安装imagesai2.0.2
+[root@kubernetes opt]# pip3 install imageai==2.0.2
+
+// 在线安装imagesai2.0.2(依赖包列表配置文件形式，请参考python3.6.2)
+[root@kubernetes opt]# pip install -r imageai.txt                    // 导出 pip freeze > imageai.txt
+[root@kubernetes opt]# cat imageai.txt  
+absl-py==0.8.1
+astor==0.8.0
+cycler==0.10.0
+Django==2.1.5
+django-ckeditor==5.7.1
+django-js-asset==1.2.2
+gast==0.2.2
+google-pasta==0.1.7
+grpcio==1.24.3
+h5py==2.10.0
+imageai==2.0.2
+Keras==2.3.1
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
+kiwisolver==1.1.0
+Markdown==3.1.1
+matplotlib==3.1.1
+numpy==1.17.3
+opencv-python==4.1.1.26
+opt-einsum==3.1.0
+Pillow==6.2.1
+protobuf==3.10.0
+PyMySQL==0.9.3
+pyparsing==2.4.2
+pytesseract==0.3.0
+python-dateutil==2.8.0
+pytz==2019.3
+PyYAML==5.1.2
+scipy==1.3.1
+six==1.12.0
+tensorboard==2.0.0
+tensorflow==2.0.0
+tensorflow-estimator==2.0.1
+termcolor==1.1.0
+uWSGI==2.0.18
+Werkzeug==0.16.0
+wrapt==1.11.2
+
+// 此网站下载whl文件 https://pypi.org/project/imageai/#files
+// 离线wheel方式安装imagesai2.0.2(请参考python3.6.2)
+[root@kubernetes opt]# pip3 install /opt/imageai-2.0.2-py3-none-any.whl
+// 离线source方式安装imagesai2.0.2(请参考python3.6.2)
+[root@kubernetes opt]# pip install imageai-2.0.2.tar.gz
+// 或者解压执行脚本安装
+[root@kubernetes opt]# tar zxf imageai-2.0.2.tar.gz
+[root@kubernetes opt]# cd imageai-2.0.2
+[root@kubernetes imageai-2.0.2]# python3 setup.py install            // 或 ./configure --> make && make install
+
+// 上传模型文件和测试图片
+~~~
+[root@kubernetes opt]# ll /opt/[DenseNet-BC-121-32.h5](https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/DenseNet-BC-121-32.h5)
+
+[root@kubernetes opt]# ll /opt/[inception_v3_weights_tf_dim_ordering_tf_kernels.h5](https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/inception_v3_weights_tf_dim_ordering_tf_kernels.h5)
+
+[root@kubernetes opt]# ll /opt/[resnet50_weights_tf_dim_ordering_tf_kernels.h5](https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_weights_tf_dim_ordering_tf_kernels.h5)
+
+[root@kubernetes opt]# ll /opt/[squeezenet_weights_tf_dim_ordering_tf_kernels.h5](https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/squeezenet_weights_tf_dim_ordering_tf_kernels.h5)
+
+[root@kubernetes opt]# ll /opt/[1.jpg](https://github.com/OlafenwaMoses/ImageAI/raw/master/data-images/1.jpg)
+
+~~~
+// 编辑测试脚本FirstPrediction.py
+[root@kubernetes opt]# vi FirstPrediction.py
+from imageai.Prediction import ImagePrediction
+import os
+
+execution_path = os.getcwd()
+
+prediction = ImagePrediction()
+prediction.setModelTypeAsResNet()
+prediction.setModelPath(os.path.join(execution_path, "resnet50_weights_tf_dim_ordering_tf_kernels.h5"))
+prediction.loadModel()
+
+predictions, probabilities = prediction.predictImage(os.path.join(execution_path, "1.jpg"), result_count=5 )
+for eachPrediction, eachProbability in zip(predictions, probabilities):
+    print(eachPrediction , " : " , eachProbability)
+// 执行测试脚本FirstPrediction.py
+[root@kubernetes opt]# python3 FirstPrediction.py
+2019-10-24 15:58:59.057685: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-10-24 15:58:59.063205: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1992000000 Hz
+2019-10-24 15:58:59.063857: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5165ab0 executing computations on platform Host. Devices:
+2019-10-24 15:58:59.063881: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+WARNING:tensorflow:When passing input data as arrays, do not specify `steps_per_epoch`/`steps` argument. Please use `batch_size` instead.
+convertible  :  52.45959162712097
+sports_car  :  37.612760066986084
+pickup  :  3.1751133501529694
+car_wheel  :  1.8174981698393822
+minivan  :  1.748703047633171
+~~~

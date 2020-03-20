@@ -1,0 +1,51 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+在此感谢 [@sleuthkit](https://github.com/sleuthkit) [@FSSlc](https://www.linuxidc.com/Linux/2015-05/118236.htm)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+
+[sleuthkit-4.6.7.tar.gz](https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.6.7/sleuthkit-4.6.7.tar.gz)
+
+[autopsy-autopsy-2.24.tar.gz](https://github.com/sleuthkit/autopsy/archive/autopsy-2.24.tar.gz)
+~~~
+// 操作系统版本
+[root@kubernetes opt]# cat /etc/centos-release
+CentOS Linux release 7.7.1908 (Core)
+// 关闭selinux
+[root@kubernetes opt]# vi /etc/selinux/config
+SELINUX=disabled
+// 重启
+[root@kubernetes opt]# reboot
+// 解压软件
+[root@kubernetes opt]# tar zxf sleuthkit-4.6.7.tar.gz
+[root@kubernetes opt]# tar zxf autopsy-autopsy-2.24.tar.gz
+// 进入sleuthkit
+[root@kubernetes opt]# cd sleuthkit-4.6.7
+// 配置
+[root@kubernetes sleuthkit-4.6.7]# ./configure
+// 编译安装
+[root@kubernetes sleuthkit-4.6.7]# make && make install
+
+// 若要使用autopsy，需要浏览器图形化服务
+
+// 更新yum包
+[root@kubernetes opt]# yum update -y
+// 安装桌面图形化服务
+[root@kubernetes opt]# yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
+// 安装浏览器
+[root@kubernetes opt]# yum install -y firefox
+// 进入autopsy
+[root@kubernetes opt]# cd autopsy-autopsy-2.24
+// 创建autopsy数据目录
+[root@kubernetes opt]# mkdir -pv /home/data/Evidence_Locker
+~~~
+// 配置(详细配置请参考[此篇文档](https://www.linuxidc.com/Linux/2015-05/118236.htm))
+~~~
+[root@kubernetes autopsy-autopsy-2.24]# ./configure
+n
+/home/data/Evidence_Locker
+// 启动
+[root@kubernetes autopsy-autopsy-2.24]# ./autopsy
+// 浏览器打开以下网址
+http://localhost:9999/autopsy
+~~~
