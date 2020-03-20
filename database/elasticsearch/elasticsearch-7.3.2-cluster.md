@@ -122,7 +122,70 @@ name                        index_patterns                order      version
 [root@docker opt]# curl 192.168.192.128:9200/_cat/indices?v
 health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
 [root@docker opt]#
+// 文本抽取设置
+// delete pipeline
+[root@docker opt]# curl -XDELETE '192.168.192.128:9200/_ingest/pipeline/attachment?pretty'
+// create pipeline
+[root@docker opt]# curl -XPUT '192.168.192.128:9200/_ingest/pipeline/attachment?pretty' -H 'Content-Type:application/json' -d '{"description":"Extract attachment information","processors":[{"attachment":{"field":"data","indexed_chars":-1,"ignore_missing":true}},{"remove":{"field":"data"}}]}'
+// search pipeline
+[root@docker opt]# curl -XGET '192.168.192.128:9200/_ingest/pipeline?pretty'	
+{
+  "attachment" : {
+	"description" : "Extract attachment information",
+	"processors" : [
+	  {
+		"attachment" : {
+		  "field" : "data",
+		  "indexed_chars" : -1,
+		  "ignore_missing" : true
+		}
+	  },
+	  {
+		"remove" : {
+		  "field" : "data"
+		}
+	  }
+	]
+  },
+  "xpack_monitoring_6" : {
+	"description" : "This pipeline upgrades documents from the older version of the Monitoring API to the newer version (7) by fixing breaking changes in those older documents before they are indexed from the older version (6).",
+	"version" : 7000199,
+	"processors" : [
+	  {
+		"script" : {
+		  "source" : "ctx._type = null"
+		}
+	  },
+	  {
+		"gsub" : {
+		  "field" : "_index",
+		  "pattern" : "(.monitoring-\\w+-)6(-.+)",
+		  "replacement" : "$17$2"
+		}
+	  }
+	]
+  },
+  "xpack_monitoring_7" : {
+	"description" : "This is a placeholder pipeline for Monitoring API version 7 so that future versions may fix breaking changes.",
+	"version" : 7000199,
+	"processors" : [ ]
+  }
+}
+	
+// 定义docfile索引
+// delete index
+[root@docker opt]# curl -XDELETE '192.168.192.128:9200/docfile?pretty'
+// create index
+// 单机版
+[root@docker opt]# curl -XPUT '192.168.192.128:9200/docfile?pretty'
+// 集群版
+[root@docker opt]# curl -XPUT '192.168.192.128:9200/docfile?pretty' -H 'Content-Type:application/json' -d '{"settings":{"number_of_shards":5,"number_of_replicas":1}}'
+// create mapping
+[root@docker opt]# curl -XPOST '192.168.192.128:9200/docfile/_mapping?pretty' -H 'Content-Type:application/json' -d '{"properties" : {"attachment" : {"properties" : {"author" : {"type" : "keyword"},"content" : {"type" : "text", "analyzer": "ik_max_word"},"content_length" : {"type" : "long"},"content_type" : {"type" : "keyword"},"date" : {"type" : "date"},"language" : {"type" : "keyword"}}},"author" : {"type" : "keyword"},"company" : {"type" : "keyword"},"createTime" : {"type" : "long"},"keywords" : {"type" : "keyword"},"lastTime" : {"type" : "long"},"md5" : {"type" : "keyword"},"name" : { "type" : "keyword"},"remark" : {"type" : "keyword"},"sampleId" : {"type" : "keyword"},"size" : {"type" : "long"},"suffix" : {"type" : "keyword"},"systemPath" : {"type" : "keyword"},"title" : {"type" : "keyword"},"updateTime" : {"type" : "long"}}}';
 
+// 初始化max_result_window和search.max_buckets
+[root@docker opt]# curl -XPUT '192.168.192.128:9200/_settings?pretty' -H 'Content-Type:application/json' -d '{ "index" : { "max_result_window" : 100000000}}'
+[root@docker opt]# curl -XPUT '192.168.192.128:9200/_cluster/settings?pretty' -H 'Content-Type:application/json' -d '{ "persistent" : { "search.max_buckets" : 1000000}}';
 ~~~
 
 [elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik)

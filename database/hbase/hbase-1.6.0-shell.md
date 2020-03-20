@@ -4,7 +4,7 @@
 
 文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
 
-[hbase-1.6.0-bin.tar.gz]()
+[hbase-1.6.0-bin.tar.gz](https://www.apache.org/dyn/closer.lua/hbase/1.6.0/hbase-1.6.0-bin.tar.gz)
 
 ~~~
 ./hdfs dfsadmin -safemode get            // 获取模式状态
