@@ -32,6 +32,7 @@
 ###### program-language
 1. c
 2. java
+- [JAVA_HOME](program-language/java/JAVA_HOME.md)
 3. objective-c
 4. python
 - [FastDFS-5.11](program-language/python/FastDFS-5.11.md)
