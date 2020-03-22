@@ -26,7 +26,7 @@ echo $PATH
 windows
 set JAVA_HOME=D:\Program Files\Java\jdk1.8.0_221
 set JRE_HOME=%JAVA_HOME%\jre
-set JAVA=%JAVA_HOME%\bin\java.exe                                                      # 可选
+set JAVA=%JAVA_HOME%\bin\java.exe                                                     # 可选
 set CLASSPATH=.;%JRE_HOME%\lib\rt.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar
 set PATH=%JAVA_HOME%\bin;%JRE_HOME%\bin;%PATH%
 java
