@@ -158,7 +158,6 @@ net.core.wmem_max = 1048586
 
 -- 立即生效
 [root@oa ~]# sysctl -p
-
 [root@oa ~]# ifconfig
 [root@oa ~]# hostname
 [root@oa ~]# vi /etc/hosts

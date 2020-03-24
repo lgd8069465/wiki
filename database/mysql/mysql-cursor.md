@@ -1,0 +1,35 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+
+~~~
+[root@docker opt]# cat /opt/mysql-cursor.sql
+/* 
+  创建crawler_cursor游标
+*/
+DROP PROCEDURE IF EXISTS crawler_cursor;
+CREATE PROCEDURE crawler_cursor()
+BEGIN
+	-- 定义flag变量用于数据是否遍历
+	DECLARE flag INT DEFAULT 0;
+	-- 定义id变量同于存储遍历出来的值
+	DECLARE id varchar(128);
+	-- 定义idList游标用于需要遍历的集合
+	DECLARE idList CURSOR FOR (select channel_type from mohe.crawler_task_task_id where task_id in (select task_id from mohe.task_resp_task_id where task_code=0) group by channel_type);
+	-- 需要遍历的集合没有数据则flag设为1
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET flag = 1;
+	-- 打开游标
+	OPEN idList;		
+		WHILE flag != 1 DO
+		        -- 从游标集合idList取值id
+		        FETCH idList INTO id;				
+		        select task_id from mohe.crawler_task_task_id c where channel_type=id and task_id in (select task_id from mohe.task_resp_task_id where task_code=0) LIMIT 100;				
+		END WHILE;
+	CLOSE idList;
+END;
+
+mysql> delimiter ;;
+mysql> source /opt/mysql-cursor.sql
+mysql> delimiter ;
+mysql> CALL crawler_cursor();
+~~~

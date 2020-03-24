@@ -17,6 +17,7 @@
 4. mongodb
 - [mongodb-4.0.12](database/mongodb/mongodb-4.0.12.md)
 5. mysql
+- [mysql-cursor](database/mysql/mysql-cursor.md)
 6. oracle-database
 - [oracle-database-11.2.0.1.0](database/oracle-database/oracle-database-11.2.0.1.0.md)
 7. postgresql
