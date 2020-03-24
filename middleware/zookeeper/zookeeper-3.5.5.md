@@ -2,7 +2,7 @@
 
 在此感谢 [@zookeeper](https://zookeeper.apache.org/) [@oracle](https://www.oracle.com/index.html)
 
-文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.1
 
 [apache-zookeeper-3.5.5-bin.tar.gz](https://downloads.apache.org/zookeeper/zookeeper-3.5.5/apache-zookeeper-3.5.5-bin.tar.gz)
 
@@ -83,16 +83,18 @@ clientPort=2181
 [root@docker bin]# zkServer.sh start
 [root@docker bin]# zkServer.sh stop
 [root@docker bin]# zkServer.sh restart
-[root@docker opt]# zkServer.sh status
+[root@docker bin]# zkServer.sh status
 ~~~
 ## zookeeper-cluster
 ~~~
+// 192.168.192.128，192.168.192.129，192.168.192.134
 [root@docker opt]# vi apache-zookeeper-3.5.5-bin/conf/zoo.cfg
 dataDir=/home/zookeeper
 clientPort=2181
 server.0=192.168.192.128:2888:3888
 server.1=192.168.192.129:2888:3888
 server.2=192.168.192.134:2888:3888
+
 // 192.168.192.128
 [root@docker opt]# vi dataDir=/home/zookeeper/myid
 0
@@ -124,19 +126,32 @@ Mode: follower
 ~~~
 ## zookeeper-cluster(伪分布式)
 ~~~
+[root@docker opt]# vi apache-zookeeper-3.5.5-bin/conf/zoo.cfg
+dataDir=/home/zookeeper
+clientPort=2181
+server.0=192.168.192.128:2888:3888
+server.1=192.168.192.128:2887:3887
+server.2=192.168.192.128:2886:3886
 [root@docker opt]# vi apache-zookeeper-3.5.5-bin1/conf/zoo.cfg
 dataDir=/home/zookeeper1
 clientPort=2182
 server.0=192.168.192.128:2888:3888
-server.1=192.168.192.129:2887:3887
-server.2=192.168.192.134:2886:3886
+server.1=192.168.192.128:2887:3887
+server.2=192.168.192.128:2886:3886
+[root@docker opt]# vi apache-zookeeper-3.5.5-bin2/conf/zoo.cfg
+dataDir=/home/zookeeper2
+clientPort=2183
+server.0=192.168.192.128:2888:3888
+server.1=192.168.192.128:2887:3887
+server.2=192.168.192.128:2886:3886
+
 // 192.168.192.128
 [root@docker opt]# vi dataDir=/home/zookeeper/myid
 0
-// 192.168.192.129
+// 192.168.192.128
 [root@docker opt]# vi dataDir=/home/zookeeper1/myid
 1
-// 192.168.192.134
+// 192.168.192.128
 [root@docker opt]# vi dataDir=/home/zookeeper2/myid
 2
 

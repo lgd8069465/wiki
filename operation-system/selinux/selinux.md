@@ -1,0 +1,13 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+~~~
+// enforcing(强制模式)，permissive(宽容模式)，disabled
+[root@docker opt]# vi /etc/selinux/config
+SELINUX=disabled
+// 获取当前selinux状态
+[root@docker opt]# getenforce Enforcing
+Enforcing
+// 临时禁用
+[root@docker opt]# setenforce 0
+~~~

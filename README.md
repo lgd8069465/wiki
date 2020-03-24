@@ -5,6 +5,18 @@
 ### 目录
 
 ###### operation-system
+1. chrony-ntp 
+- [chrony-ntp](operation-system/chrony-ntp/chrony-ntp.md)
+2. firewalld 
+- [firewalld](operation-system/firewalld/firewalld.md)
+3. hostname 
+- [hostname](operation-system/hostname/hostname.md)
+4. ip-dns 
+- [ip-dns](operation-system/ip-dns/ip-dns.md)
+5. selinux 
+- [selinux](operation-system/selinux/selinux.md)
+6. yum 
+- [yum](operation-system/yum/yum.md) 
 
 ###### database
 1. elasticsearch 	

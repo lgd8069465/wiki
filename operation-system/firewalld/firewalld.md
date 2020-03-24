@@ -1,0 +1,27 @@
+[Licensed under the CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
+~~~
+firewalld 和 iptables冲突，二者取一
+
+centos7
+[root@docker opt]# firewall-cmd --zone=public --add-port=80/tcp --permanent 
+[root@docker opt]# firewall-cmd --zone=public --add-port=80/udp --permanent
+[root@docker opt]# firewall-cmd --query-port=80/tcp
+[root@docker opt]# firewall-cmd --reload
+[root@docker opt]# firewall-cmd --list-port
+[root@docker opt]# systemctl stop firewalld
+[root@docker opt]# systemctl disable firewalld
+
+centos6
+[root@prometheus opt]# iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+[root@prometheus opt]# iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+[root@prometheus opt]# service iptables save
+[root@prometheus opt]# vi /etc/sysconfig/iptables
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 80 -j ACCEPT
+[root@prometheus opt]# service iptables save
+[root@prometheus opt]# service iptables restart
+[root@prometheus opt]# service iptables save
+[root@prometheus opt]# chkconfig
+~~~
