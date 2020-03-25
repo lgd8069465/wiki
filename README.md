@@ -19,6 +19,7 @@
 - [yum](operation-system/yum/yum.md) 
 
 ###### database
+[database-tools](database/database-tools.md)
 1. elasticsearch 	
 - [elasticsearch-7.3.2](database/elasticsearch/elasticsearch-7.3.2.md)
 - [elasticsearch-7.3.2-cluster](database/elasticsearch/elasticsearch-7.3.2-cluster.md)
@@ -58,3 +59,7 @@
 ###### software
 
 ###### others
+1. macos
+- [macos](others/macos/macos.md)
+2. windows
+- [windows](others/windows/windows.md)
