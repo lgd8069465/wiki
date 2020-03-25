@@ -2,15 +2,7 @@
 
 文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
 
-[阿里云](https://developer.aliyun.com/mirror/centos)
-
-[清华](https://mirrors.tuna.tsinghua.edu.cn/help/centos/)
-
-[科大](https://mirrors.ustc.edu.cn/help/centos.html)
-
-[腾讯](https://mirrors.cloud.tencent.com/help/centos.html)
-
-[网易](http://mirrors.163.com/.help/centos.html)
+[阿里云](https://developer.aliyun.com/mirror/) [清华](https://mirrors.tuna.tsinghua.edu.cn/) [科大](https://mirrors.ustc.edu.cn/) [腾讯](https://mirrors.cloud.tencent.com/) [网易](http://mirrors.163.com/)
 
 ## 挂在光盘/镜像
 ~~~
