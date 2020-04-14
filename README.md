@@ -18,6 +18,7 @@
 ├── 1.5.yum
 │   └── 1.5.1.yum.md
 ├── 1.6.swap
+│   └── 1.6.1.swap.md
 └── 1.7.chrony-ntp
     └── 1.7.1.chrony-ntp.md
 2.database
@@ -52,12 +53,15 @@
 ├── 3.3.swift
 ├── 3.4.java
 │   └── 3.4.1.JAVA_HOME.md
-└── 3.5.python
-    ├── 3.5.1.python-3.6.2.md
-    ├── 3.5.2.FastDFS-5.11.md
-    ├── 3.5.3.imageai-2.0.2.md
-    ├── 3.5.4.tesseract-3.05.00.md
-    └── 3.5.5.sleuthkit-4.6.7.md
+├── 3.5.python
+│   ├── 3.5.1.python-3.6.2.md
+│   ├── 3.5.2.FastDFS-5.11.md
+│   ├── 3.5.3.seaweedfs-1.71.md
+│   ├── 3.5.4.imageai-2.0.2.md
+│   ├── 3.5.5.sleuthkit-4.6.7.md
+│   └── 3.5.6.tesseract-3.05.00.md
+└── 3.6.golang
+    └── 3.6.1.go1.14.1.md
 4.middleware
 ├── 4.1.nginx
 ├── 4.2.tomcat
