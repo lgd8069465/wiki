@@ -19,8 +19,10 @@
 │   └── 1.5.1.yum.md
 ├── 1.6.swap
 │   └── 1.6.1.swap.md
-└── 1.7.chrony-ntp
-    └── 1.7.1.chrony-ntp.md
+├── 1.7.chrony-ntp
+│   └── 1.7.1.chrony-ntp.md
+└── 1.8.fonts
+    └── 1.8.1.fonts.md
 2.database
 ├── 2.10.hbase
 │   └── 2.10.1.hbase-1.6.0-shell.md
@@ -32,6 +34,7 @@
 ├── 2.2.mysql
 │   ├── 2.2.1.innodbcluster-ndbcluster.md
 │   ├── 2.2.2.mysql-cursor.md
+│   ├── 2.2.3.mysql-install.md
 │   └── xtrabackup
 ├── 2.3.sqlite
 ├── 2.4.firebird
