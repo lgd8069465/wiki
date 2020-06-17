@@ -46,7 +46,9 @@
 │   ├── 2.7.2.elasticsearch-7.3.2-cluster.md
 │   └── 2.7.3.elasticsearch-7.3.2-no-jdk.md
 ├── 2.8.mongodb
-│   └── 2.8.1.mongodb-4.0.12.md
+│   ├── 2.8.1.mongodb-4.0.12.md
+│   ├── 2.8.2.mongodb-replication-4.0.12.md
+│   └── 2.8.3.mongodb-replication-keyFile-4.0.12.md
 └── 2.9.postgresql
     ├── 2.9.1.postgresql-11.7-install.md
     └── greenplum
