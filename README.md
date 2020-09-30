@@ -31,7 +31,8 @@
     │   ├── 1.9.2.1.raid0.md
     │   ├── 1.9.2.2.raid1.md
     │   ├── 1.9.2.3.raid5.md
-    │   └── 1.9.2.4.raid10.md
+    │   ├── 1.9.2.4.raid6.md
+    │   └── 1.9.2.5.raid10.md
     ├── 1.9.3.fdisk-parted
     │   ├── 1.9.3.1.fdisk.md
     │   └── 1.9.3.2.parted.md
