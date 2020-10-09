@@ -130,9 +130,9 @@
 └── 5.9.rancher
 6.others
 ├── 6.1.macos
-│   └── 6.1.1.macos.md
+│   └── README.md
 └── 6.2.windows
-    └── 6.2.1.windows.md
+    └── README.md
 README.md
 ~~~
 

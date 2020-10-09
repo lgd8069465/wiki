@@ -84,7 +84,7 @@ set PATH=;C:\cmder;
 
 - 压缩工具
 
-[`7-Zip`](https://www.7-zip.org/download.html)
+[`7-Zip`](https://www.7-zip.org/download.html) [`360压缩`](https://yasuo.360.cn/) 
 
 - 文件/文件夹搜索
 

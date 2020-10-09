@@ -70,7 +70,7 @@
 
 - 压缩工具
 
-[`Keka`](https://github.com/aonez/Keka) [`The Unarchiver`](https://www.theunarchiver.com/) 
+[`Keka`](https://github.com/aonez/Keka) [`The Unarchiver`](https://www.theunarchiver.com/) [`360压缩`](https://yasuo.360.cn/) 
 
 - 截图工具
 
