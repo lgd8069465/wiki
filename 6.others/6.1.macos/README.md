@@ -54,7 +54,7 @@
 
 - 编辑工具
 
-[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) 
+[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) 
 
 - 浏览器
 

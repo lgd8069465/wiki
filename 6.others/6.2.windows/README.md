@@ -64,7 +64,7 @@ set PATH=;C:\cmder;
 
 - 编辑工具
 
-[`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus) [`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) 
+[`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus) [`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) 
 
 - 浏览器
 
