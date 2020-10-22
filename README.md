@@ -99,7 +99,7 @@
 │   └── 4.3.1.zookeeper-3.5.5.md
 ├── 4.4.activemq
 ├── 4.5.apollo
-├── 4.6.jboss
+├── 4.6.jboss(wildfly)
 ├── 4.7.kafka
 │   └── 4.7.1.kafka_2.11-2.4.1.md
 ├── 4.8.rabbitmq
