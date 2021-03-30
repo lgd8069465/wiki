@@ -45,6 +45,7 @@
 ├── 2.11.prometheus
 ├── 2.12.influxdb
 ├── 2.13.cassandra
+├── 2.14.clickhouse
 ├── 2.1.database-tools.md
 ├── 2.1.oracle-database
 │   ├── 2.1.1.oracle-database-11.2.0.1.0.md
@@ -114,8 +115,12 @@
 ├── 5.15.ffmpeg
 │   └── 5.15.1.ffmpeg-4.3.1.md
 ├── 5.16.vpn
-│   └── 5.16.1.WireGuard
-│       └── 5.16.1.1.WireGuard.md
+│   ├── 5.16.1.WireGuard
+│   │   └── 5.16.1.1.WireGuard.md
+│   ├── 5.16.2.shadowsocks
+│   ├── 5.16.3.v2ray
+│   ├── 5.16.4.outline
+│   └── 5.16.5.SoftEtherVPN
 ├── 5.17.ansible
 │   └── 5.17.1.ansible-install.md
 ├── 5.1.docker
