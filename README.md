@@ -46,6 +46,8 @@
 ├── 2.12.influxdb
 ├── 2.13.cassandra
 ├── 2.14.clickhouse
+├── 2.15.etcd
+│   └── 2.15.1.etcd-install.md
 ├── 2.1.database-tools.md
 ├── 2.1.oracle-database
 │   ├── 2.1.1.oracle-database-11.2.0.1.0.md
