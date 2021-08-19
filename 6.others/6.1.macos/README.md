@@ -46,7 +46,7 @@
 
 - shell连接工具
 
-[`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`Termius`](https://www.termius.com/mac-os) [`electerm`](https://github.com/electerm/electerm) 
+[`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`Termius`](https://www.termius.com/mac-os) [`electerm`](https://github.com/electerm/electerm) [`WindTerm`](https://github.com/kingToolbox/WindTerm) 
 
 - ftp连接工具
 
@@ -66,7 +66,7 @@
 
 - 远程工具
 
-[`TeamViewer`](https://www.teamviewer.cn/cn/download/mac-os/) [`向日葵`](https://sunlogin.oray.com/download/) 
+[`TeamViewer`](https://www.teamviewer.cn/cn/download/mac-os/) [`向日葵`](https://sunlogin.oray.com/download/) [`ToDesk`](https://www.todesk.com/download.html) 
 
 - 压缩工具
 
@@ -94,7 +94,7 @@
 
 - 翻墙工具
 
-[`ShadowsocksX-NG`](https://github.com/shadowsocks/ShadowsocksX-NG) [`Outline`](https://github.com/Jigsaw-Code/outline-client) [`Lantern`](https://github.com/getlantern/lantern) [`免费上网账号`](https://free-ss.site/) [`GoogleHosts`](https://github.com/googlehosts/hosts) [`goproxy`](https://github.com/snail007/goproxy) [`WireGuard`](https://github.com/WireGuard/WireGuard) [`SoftEtherVPN`](https://github.com/SoftEtherVPN/SoftEtherVPN) [`v2ray`](https://github.com/v2ray/v2ray-core) [`Surge`](https://nssurge.com/) [`clashX`](https://github.com/yichengchen/clashX) 
+[`ShadowsocksX-NG`](https://github.com/shadowsocks/ShadowsocksX-NG) [`Outline`](https://github.com/Jigsaw-Code/outline-client) [`Lantern`](https://github.com/getlantern/lantern) [`免费上网账号`](https://free-ss.site/) [`GoogleHosts`](https://github.com/googlehosts/hosts) [`goproxy`](https://github.com/snail007/goproxy) [`WireGuard`](https://github.com/WireGuard/WireGuard) [`SoftEtherVPN`](https://github.com/SoftEtherVPN/SoftEtherVPN) [`v2rayNG`](https://github.com/2dust/v2rayNG) [`Surge`](https://nssurge.com/) [`clashX`](https://github.com/yichengchen/clashX) 
 
 - 反编译java
 
