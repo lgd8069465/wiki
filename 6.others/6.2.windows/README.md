@@ -43,6 +43,7 @@ set PATH=;C:\cmder;
 | [TablePlus](https://tableplus.com/)                          |      | *    |
 | [pgAdmin](https://www.pgadmin.org/download/)                 | *    | *    |
 | [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
+| [gobang](https://github.com/TaKO8Ki/gobang)                  | *    | *    |
 
 - 数据库建模工具
 
@@ -56,11 +57,11 @@ set PATH=;C:\cmder;
 
 - shell连接工具
 
-[`Xshell`](https://www.netsarang.com/zh/xshell/) [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) [`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`MobaXterm`](https://mobaxterm.mobatek.net/download.html) [`Termius`](https://www.termius.com/windows) [`electerm`](https://github.com/electerm/electerm) [`WindTerm`](https://github.com/kingToolbox/WindTerm) 
+[`Xshell`](https://www.netsarang.com/zh/xshell/) [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) [`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`MobaXterm`](https://mobaxterm.mobatek.net/download.html) [`Termius`](https://www.termius.com/windows) [`electerm`](https://github.com/electerm/electerm) [`WindTerm`](https://github.com/kingToolbox/WindTerm) [`coreftp`](http://www.coreftp.com/download.html) 
 
-- ftp连接工具
+- ftp/sftp连接工具
 
-[`Xftp`](https://www.netsarang.com/zh/xftp/) [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) [`WinSCP`](https://github.com/winscp/winscp) [`SecureFX`](https://www.vandyke.com/cgi-bin/releases.php?product=securefx) [`FileZilla Client`](https://filezilla-project.org/download.php?type=client)
+[`Xftp`](https://www.netsarang.com/zh/xftp/) [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) [`WinSCP`](https://github.com/winscp/winscp) [`SecureFX`](https://www.vandyke.com/cgi-bin/releases.php?product=securefx) [`FileZilla Client`](https://filezilla-project.org/download.php?type=client) [`coreftp`](http://www.coreftp.com/download.html) 
 
 - 编辑工具
 

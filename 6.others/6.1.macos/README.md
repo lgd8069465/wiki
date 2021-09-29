@@ -34,6 +34,7 @@
 | [TablePlus](https://tableplus.com/)                          |      | *    |
 | [pgAdmin](https://www.pgadmin.org/download/)                 | *    | *    |
 | [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
+| [gobang](https://github.com/TaKO8Ki/gobang)                  | *    | *    |
 
 - 数据库建模工具
 
@@ -90,7 +91,7 @@
 
 - 软件卸载
 
-[`腾讯柠檬清理 (Lemon Cleaner)`](https://lemon.qq.com/)
+[`腾讯柠檬清理 (Lemon Cleaner)`](https://lemon.qq.com/) [`vitalsigns`](https://www.disometric.com/vitalsigns/) 
 
 - 翻墙工具
 
