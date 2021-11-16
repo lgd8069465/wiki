@@ -119,7 +119,7 @@
 
 - NTFS
 
-[`osxfuse`](https://github.com/osxfuse/osxfuse) [`Tuxera`](https://www.ntfsformac.cc/xiazai.html) [`Paragon`](https://www.ntfsformac.cn/xiazai.html) [`Mounty`](https://mounty.app/) [`ntfstool`](https://github.com/ntfstool/ntfstool) 
+[`osxfuse`](https://github.com/osxfuse/osxfuse) [`Tuxera`](https://www.ntfsformac.cc/xiazai.html) [`Paragon`](https://www.ntfsformac.cn/xiazai.html) [`Mounty`](https://mounty.app/) [`ntfstool`](https://github.com/ntfstool/ntfstool) [`ntfs-3g`](https://github.com/tuxera/ntfs-3g) 
 
 - 翻译
 
