@@ -4,14 +4,21 @@
 
 - 用于替换cmd
 
-[`cmder`](https://github.com/cmderdev/cmder) [`Windows Terminal`](https://github.com/microsoft/terminal) [`alacritty`](https://github.com/alacritty/alacritty) [`wezterm`](https://github.com/wez/wezterm) 
+| 名称                                                        | 免费 | 开源 |
+| ----------------------------------------------------------- | ---- | ---- |
+| [`cmder`](https://github.com/cmderdev/cmder)                | *    | *    |
+| [`Windows Terminal`](https://github.com/microsoft/terminal) | *    | *    |
+| [`alacritty`](https://github.com/alacritty/alacritty)       | *    | *    |
+| [`wezterm`](https://github.com/wez/wezterm)                 | *    | *    |
+| [`kitty`](https://github.com/kovidgoyal/kitty)              | *    | *    |
 
-~~~
-set PATH=;C:\cmder;
-~~~
 -  集成安装软件
 
-[`choco`](https://github.com/chocolatey/choco) [`scoop`](https://github.com/lukesampson/scoop) [`winget`](https://github.com/microsoft/winget-cli)
+| 名称                                                | 免费 | 开源 |
+| --------------------------------------------------- | ---- | ---- |
+| [`scoop`](https://github.com/lukesampson/scoop)     | *    | *    |
+| [`winget`](https://github.com/microsoft/winget-cli) | *    | *    |
+| [`choco`](https://github.com/chocolatey/choco)      | *    | *    |
 
 - 微软工具集合
 
@@ -27,45 +34,72 @@ set PATH=;C:\cmder;
 
 - 数据库连接工具
 
-| 名称                                                         | 免费 | 推荐 |
+| 名称                                                         | 免费 | 开源 |
 | ------------------------------------------------------------ | ---- | ---- |
-| [Navicat](https://www.navicat.com.cn/products)               |      | *    |
-| [Toad](https://www.quest.com/toad/)                          |      | *    |
-| [PL/SQL Developer](https://www.allroundautomations.com/registered-plsqldev/) |      | *    |
-| [phpMyAdmin](https://github.com/phpmyadmin/phpmyadmin)       | *    |      |
-| [DBeaver](https://dbeaver.io/download/)                      | *    | *    |
-| [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) | *    | *    |
-| [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    |      |
-| [SQLyog](https://www.webyog.com/)                            |      |      |
-| [HeidiSQL](https://github.com/HeidiSQL/HeidiSQL)             | *    | *    |
-| [RedisDesktopManager](https://redisdesktop.com/pricing)      |      | *    |
-| [phpRedisAdmin](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
-| [TablePlus](https://tableplus.com/)                          |      | *    |
-| [pgAdmin](https://www.pgadmin.org/download/)                 | *    | *    |
-| [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
-| [gobang](https://github.com/TaKO8Ki/gobang)                  | *    | *    |
+| [`Navicat`](https://www.navicat.com.cn/products)             |      |      |
+| [`Toad`](https://www.quest.com/toad/)                        |      |      |
+| [`PL/SQL Developer` ](https://www.allroundautomations.com/registered-plsqldev/) |      |      |
+| [`phpMyAdmin`](https://github.com/phpmyadmin/phpmyadmin)     | *    | *    |
+| [`DBeaver` ](https://dbeaver.io/download/)                   | *    |      |
+| [`SQL Developer` ](https://www.oracle.com/tools/downloads/sqldev-downloads.html) | *    |      |
+| [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) | *    |      |
+| [`SQLyog`](https://www.webyog.com/)                          |      |      |
+| [`HeidiSQL`](https://github.com/HeidiSQL/HeidiSQL)           | *    |      |
+| [`RedisDesktopManager`](https://redisdesktop.com/pricing)    |      |      |
+| [`phpRedisAdmin`](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
+| [`TablePlus`](https://tableplus.com/)                        |      |      |
+| [`pgAdmin`](https://www.pgadmin.org/download/)               | *    |      |
+| [`beekeeper-studio`](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
+| [`gobang`](https://github.com/TaKO8Ki/gobang)                | *    | *    |
+| [`robo3t`](https://github.com/Studio3T/robomongo)            | *    | *    |
 
 - 数据库建模工具
 
-| 名称                                                         | 免费 | 推荐 |
+| 名称                                                         | 免费 | 开源 |
 | ------------------------------------------------------------ | ---- | ---- |
-| [Navicat Data Modeler](https://www.navicat.com.cn/products)  |      | *    |
-| [PowerDesigner](https://www.powerdesigner.biz/)              |      | *    |
-| [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    | *    |
-| [SQL Developer Data Modeler](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html) | *    | *    |
-| [Toad Data Modeler](https://www.quest.com/products/toad-data-modeler/) |      | *    |
+| [`Navicat Data Modeler`](https://www.navicat.com.cn/products) |      |      |
+| [`PowerDesigner`](https://www.powerdesigner.biz/)            |      |      |
+| [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) | *    |      |
+| [`SQL Developer Data Modeler`](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html) | *    |      |
+| [`Toad Data Modeler`](https://www.quest.com/products/toad-data-modeler/) |      |      |
 
-- shell连接工具
+- shell连接工具       
 
-[`Xshell`](https://www.netsarang.com/zh/xshell/) [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) [`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`MobaXterm`](https://mobaxterm.mobatek.net/download.html) [`Termius`](https://www.termius.com/windows) [`electerm`](https://github.com/electerm/electerm) [`WindTerm`](https://github.com/kingToolbox/WindTerm) [`coreftp`](http://www.coreftp.com/download.html) 
+| 名称                                                         | 免费 | 开源 |
+| ------------------------------------------------------------ | ---- | ---- |
+| [`Xshell`](https://www.netsarang.com/zh/xshell/)             | *    |      |
+| [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) | *    |      |
+| [`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) |      |      |
+| [`MobaXterm`](https://mobaxterm.mobatek.net/download.html)   | *    |      |
+| [`Termius`](https://www.termius.com/windows)                 |      |      |
+| [`electerm`](https://github.com/electerm/electerm)           | *    | *    |
+| [`WindTerm`](https://github.com/kingToolbox/WindTerm)        | *    | *    |
+| [`coreftp`](http://www.coreftp.com/download.html)            | *    |      |
+| [`FinalShell`](http://www.hostbuf.com/)                      | *    |      |
 
-- ftp/sftp连接工具
+- ftp/sftp连接工具      
 
-[`Xftp`](https://www.netsarang.com/zh/xftp/) [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) [`WinSCP`](https://github.com/winscp/winscp) [`SecureFX`](https://www.vandyke.com/cgi-bin/releases.php?product=securefx) [`FileZilla Client`](https://filezilla-project.org/download.php?type=client) [`coreftp`](http://www.coreftp.com/download.html) 
+| 名称                                                         | 免费 | 开源 |
+| ------------------------------------------------------------ | ---- | ---- |
+| [`Xftp`](https://www.netsarang.com/zh/xftp/)                 | *    |      |
+| [`PuTTY`](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) | *    |      |
+| [`WinSCP`](https://github.com/winscp/winscp)                 | *    | *    |
+| [`SecureFX`](https://www.vandyke.com/cgi-bin/releases.php?product=securefx) |      |      |
+| [`FileZilla Client`](https://filezilla-project.org/download.php?type=client) | *    |      |
+| [`coreftp`](http://www.coreftp.com/download.html)            |      |      |
 
-- 编辑工具
+- 编辑工具        
 
-[`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus) [`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) 
+| 名称                                                        | 免费 | 开源 |
+| ----------------------------------------------------------- | ---- | ---- |
+| [`Visual Studio Code`](https://github.com/microsoft/vscode) | *    | *    |
+| [`Atom`](https://github.com/atom/atom)                      | *    | *    |
+| [`Sublime`](https://www.sublimetext.com/3)                  | *    |      |
+| [`Typora`](https://www.typora.io/)                          | *    |      |
+| [`Boostnote`](https://github.com/BoostIO/Boostnote)         | *    | *    |
+| [`CudaText`](http://uvviewsoft.com/cudatext/download.html)  | *    |      |
+| [`stackedit`](https://github.com/benweet/stackedit)         | *    | *    |
+| [`思源笔记`](https://github.com/siyuan-note/siyuan)         | *    | *    |
 
 - 浏览器
 
@@ -85,7 +119,7 @@ set PATH=;C:\cmder;
 
 - 压缩工具
 
-[`7-Zip`](https://www.7-zip.org/download.html) [`360压缩`](https://yasuo.360.cn/) 
+[`7-Zip`](https://www.7-zip.org/download.html) [`360压缩`](https://yasuo.360.cn/) [`PeaZip`](https://github.com/peazip/PeaZip) 
 
 - 文件/文件夹搜索
 

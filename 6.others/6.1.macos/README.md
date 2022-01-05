@@ -20,7 +20,7 @@
 
 - 数据库连接工具
 
-| 名称                                                         | 免费 | 推荐 |
+| 名称                                                         | 免费 | 开源 |
 | ------------------------------------------------------------ | ---- | ---- |
 | [Navicat](https://www.navicat.com.cn/products)               |      | *    |
 | [Toad](https://www.quest.com/toad/)                          |      | *    |
@@ -38,7 +38,7 @@
 
 - 数据库建模工具
 
-| 名称                                                         | 免费 | 推荐 |
+| 名称                                                         | 免费 | 开源 |
 | ------------------------------------------------------------ | ---- | ---- |
 | [Navicat Data Modeler](https://www.navicat.com.cn/products)  |      | *    |
 | [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    | *    |
