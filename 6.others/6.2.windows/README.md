@@ -76,6 +76,7 @@
 | [`WindTerm`](https://github.com/kingToolbox/WindTerm)        | *    | *    |
 | [`coreftp`](http://www.coreftp.com/download.html)            | *    |      |
 | [`FinalShell`](http://www.hostbuf.com/)                      | *    |      |
+| [`tabby`](https://github.com/Eugeny/tabby)                   | *    | *    |
 
 - ftp/sftp连接工具      
 

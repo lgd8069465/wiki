@@ -47,7 +47,7 @@
 
 - shell连接工具
 
-[`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`Termius`](https://www.termius.com/mac-os) [`electerm`](https://github.com/electerm/electerm) [`WindTerm`](https://github.com/kingToolbox/WindTerm) 
+[`SecureCRT`](https://www.vandyke.com/cgi-bin/releases.php?product=securecrt) [`Termius`](https://www.termius.com/mac-os) [`electerm`](https://github.com/electerm/electerm) [`WindTerm`](https://github.com/kingToolbox/WindTerm) [`tabby`](https://github.com/Eugeny/tabby) 
 
 - ftp连接工具
 
