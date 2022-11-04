@@ -11,6 +11,7 @@
 | [`alacritty`](https://github.com/alacritty/alacritty)       | *    | *    |
 | [`wezterm`](https://github.com/wez/wezterm)                 | *    | *    |
 | [`kitty`](https://github.com/kovidgoyal/kitty)              | *    | *    |
+| [`hyper`](https://github.com/vercel/hyper)                  | *    | *    |
 
 -  集成安装软件
 

@@ -4,7 +4,7 @@
 
 - 用于替换term
 
-[`iTerm2`](https://github.com/gnachman/iTerm2) [`alacritty`](https://github.com/alacritty/alacritty) [`kitty`](https://github.com/kovidgoyal/kitty) [`wezterm`](https://github.com/wez/wezterm) 
+[`iTerm2`](https://github.com/gnachman/iTerm2) [`alacritty`](https://github.com/alacritty/alacritty) [`kitty`](https://github.com/kovidgoyal/kitty) [`wezterm`](https://github.com/wez/wezterm) [`hyper`](https://github.com/vercel/hyper) 
 
 - 集成安装软件
 
