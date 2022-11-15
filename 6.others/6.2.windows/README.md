@@ -53,6 +53,8 @@
 | [`beekeeper-studio`](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
 | [`gobang`](https://github.com/TaKO8Ki/gobang)                | *    | *    |
 | [`robo3t`](https://github.com/Studio3T/robomongo)            | *    | *    |
+| [`tabix`](https://github.com/tabixio/tabix)                  | *    | *    |
+| [`azuredatastudio`](https://github.com/microsoft/azuredatastudio) | *    | *    |
 
 - 数据库建模工具
 

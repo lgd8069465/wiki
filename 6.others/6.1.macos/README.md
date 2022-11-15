@@ -128,3 +128,8 @@
 - 词典
 
 [`欧路词典`](https://www.eudic.net/v4/en/app/eudic) [`Bing词典`](https://www.bing.com/dict/) [`有道词典`](http://cidian.youdao.com/) [`linguee`](https://www.linguee.com/) 
+
+
+- 系统监视器
+
+[`eul`](https://github.com/gao-sun/eul) [`stats`](https://github.com/exelban/stats) [`iGlance`](https://github.com/iglance/iGlance) 
