@@ -2,6 +2,10 @@
 
 文档不定时更新，如有疑问请及时联系本文作者，当前文档版本1.0.0
 
+- 用于替换文件资源管理器
+
+[`Files`](https://github.com/files-community/Files) 
+
 - 用于替换cmd
 
 | 名称                                                        | 免费 | 开源 |
@@ -21,9 +25,9 @@
 | [`winget`](https://github.com/microsoft/winget-cli) | *    | *    |
 | [`choco`](https://github.com/chocolatey/choco)      | *    | *    |
 
-- 微软工具集合
+- 工具集合
 
-[`PowerToys`](https://github.com/microsoft/PowerToys) [`Sysinternals`](https://docs.microsoft.com/zh-cn/sysinternals/) 
+[`PowerToys`](https://github.com/microsoft/PowerToys) [`Sysinternals`](https://docs.microsoft.com/zh-cn/sysinternals/) [`DevToys`](https://github.com/veler/DevToys) [`CyberChef`](https://github.com/gchq/CyberChef) 
 
 - PowerShell
 
@@ -47,12 +51,14 @@
 | [`SQLyog`](https://www.webyog.com/)                          |      |      |
 | [`HeidiSQL`](https://github.com/HeidiSQL/HeidiSQL)           | *    |      |
 | [`RedisDesktopManager`](https://redisdesktop.com/pricing)    |      |      |
+| [`RedisInsight`](https://github.com/RedisInsight/RedisInsight)    | *    | *    |
 | [`phpRedisAdmin`](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
 | [`TablePlus`](https://tableplus.com/)                        |      |      |
 | [`pgAdmin`](https://www.pgadmin.org/download/)               | *    |      |
 | [`beekeeper-studio`](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
 | [`gobang`](https://github.com/TaKO8Ki/gobang)                | *    | *    |
 | [`robo3t`](https://github.com/Studio3T/robomongo)            | *    | *    |
+| [`mongood`](https://github.com/renzholy/mongood)             | *    | *    |
 | [`tabix`](https://github.com/tabixio/tabix)                  | *    | *    |
 | [`azuredatastudio`](https://github.com/microsoft/azuredatastudio) | *    | *    |
 
@@ -127,7 +133,15 @@
 
 - 文件/文件夹搜索
 
-[`Everything`](https://www.voidtools.com/zh-cn/downloads/)
+[`Everything`](https://www.voidtools.com/zh-cn/downloads/) 
+
+- 文件管理快速启动
+
+[`Listary`](https://www.listary.com/download) [`Wox`](https://github.com/Wox-launcher/Wox) [`Fluent-Search`](https://github.com/adirh3/Fluent-Search) [`uTools`](https://www.u-tools.cn/) 
+
+- 全文本搜索工具
+
+[`OpenSearcher`](https://github.com/Gaoyongxian666/OpenSearcher) [`AnyTXT Searcher`](https://anytxt.net/) [`TextLocator`](https://github.com/liulei901112/TextLocator) 
 
 - 截图工具
 

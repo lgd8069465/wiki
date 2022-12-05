@@ -4,13 +4,17 @@
 
 - 用于替换term
 
-[`iTerm2`](https://github.com/gnachman/iTerm2) [`alacritty`](https://github.com/alacritty/alacritty) [`kitty`](https://github.com/kovidgoyal/kitty) [`wezterm`](https://github.com/wez/wezterm) [`hyper`](https://github.com/vercel/hyper) 
+[`iTerm2`](https://github.com/gnachman/iTerm2) [`Warp`](https://github.com/warpdotdev/Warp) [`alacritty`](https://github.com/alacritty/alacritty) [`kitty`](https://github.com/kovidgoyal/kitty) [`wezterm`](https://github.com/wez/wezterm) [`hyper`](https://github.com/vercel/hyper) 
 
 - 集成安装软件
 
 [`homebrew`](https://brew.sh/) [`CocoaPods`](https://github.com/CocoaPods/CocoaPods) [`Carthage`](https://github.com/Carthage/Carthage) 
 
-* 用于替换bash
+- 工具集合
+
+[`DevToysMac`](https://github.com/ObuchiYuki/DevToysMac) [`CyberChef`](https://github.com/gchq/CyberChef) [`Alfred`](https://www.alfredapp.com/) [`uTools`](https://www.u-tools.cn/) 
+
+- 用于替换bash
 
 [`ohmyzsh`](https://github.com/ohmyzsh/ohmyzsh) [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) [`fish-shell`](https://github.com/fish-shell/fish-shell) [`oh-my-fish`](https://github.com/oh-my-fish/oh-my-fish) 
 
@@ -22,16 +26,17 @@
 
 | 名称                                                         | 免费 | 开源 |
 | ------------------------------------------------------------ | ---- | ---- |
-| [Navicat](https://www.navicat.com.cn/products)               |      | *    |
-| [Toad](https://www.quest.com/toad/)                          |      | *    |
+| [Navicat](https://www.navicat.com.cn/products)               |      |      |
+| [Toad](https://www.quest.com/toad/)                          |      |      |
 | [DBeaver](https://dbeaver.io/download/)                      | *    | *    |
-| [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) | *    | *    |
-| [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    | *    |
+| [SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html) | *    |      |
+| [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    |      |
 | [Sequel Pro](https://github.com/sequelpro/sequelpro)         | *    | *    |
 | [Sequel-Ace](https://github.com/Sequel-Ace/Sequel-Ace)       | *    | *    |
-| [RedisDesktopManager](https://redisdesktop.com/pricing)      |      | *    |
+| [RedisDesktopManager](https://redisdesktop.com/pricing)      |      |      |
+| [`RedisInsight`](https://github.com/RedisInsight/RedisInsight)    | *    | *    |
 | [phpRedisAdmin](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
-| [TablePlus](https://tableplus.com/)                          |      | *    |
+| [TablePlus](https://tableplus.com/)                          |      |      |
 | [pgAdmin](https://www.pgadmin.org/download/)                 | *    | *    |
 | [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
 | [gobang](https://github.com/TaKO8Ki/gobang)                  | *    | *    |
@@ -40,10 +45,10 @@
 
 | 名称                                                         | 免费 | 开源 |
 | ------------------------------------------------------------ | ---- | ---- |
-| [Navicat Data Modeler](https://www.navicat.com.cn/products)  |      | *    |
-| [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    | *    |
-| [SQL Developer Data Modeler](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html) | *    | *    |
-| [Toad Data Modeler](https://www.quest.com/products/toad-data-modeler/) |      | *    |
+| [Navicat Data Modeler](https://www.navicat.com.cn/products)  |      |     |
+| [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) | *    |     |
+| [SQL Developer Data Modeler](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html) | *    |     |
+| [Toad Data Modeler](https://www.quest.com/products/toad-data-modeler/) |      |     |
 
 - shell连接工具
 
@@ -55,7 +60,7 @@
 
 - 编辑工具
 
-[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) 
+[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) [`CodeEdit`](https://github.com/CodeEditApp/CodeEdit) 
 
 - 浏览器
 
@@ -63,7 +68,7 @@
 
 - 虚拟机
 
-[`VMware Fusion`](https://www.vmware.com/cn/products/fusion/fusion-evaluation.html) [`Oracle VM VirtualBox`](https://www.virtualbox.org/wiki/Downloads) [`Parallels Desktop`](https://www.parallels.cn/products/desktop/)
+[`lima`](https://github.com/lima-vm/lima) [`VMware Fusion`](https://www.vmware.com/cn/products/fusion/fusion-evaluation.html) [`Oracle VM VirtualBox`](https://www.virtualbox.org/wiki/Downloads) [`Parallels Desktop`](https://www.parallels.cn/products/desktop/)
 
 - 远程工具
 
