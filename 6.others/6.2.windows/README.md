@@ -119,6 +119,10 @@
 
 [`Chrome49.0.2623.112`](https://dl.google.com/release2/h8vnfiy7pvn3lxy9ehfsaxlrnnukgff8jnodrp0y21vrlem4x71lor5zzkliyh8fv3sryayu5uk5zi20ep7dwfnwr143dzxqijv/49.0.2623.112_chrome_installer.exe) [`Firefox52.9.0esr`](https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/) 
 
+- Windows 7浏览器
+
+[`Chrome109`]() 
+
 - 虚拟机
 
 [`VMware Workstation Pro`](https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html) [`Oracle VM VirtualBox`](https://www.virtualbox.org/wiki/Downloads)
