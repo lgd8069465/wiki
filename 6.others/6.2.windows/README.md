@@ -49,7 +49,7 @@
 | [`SQL Developer` ](https://www.oracle.com/tools/downloads/sqldev-downloads.html) | *    |      |
 | [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) | *    |      |
 | [`SQLyog`](https://www.webyog.com/)                          |      |      |
-| [`HeidiSQL`](https://github.com/HeidiSQL/HeidiSQL)           | *    |      |
+| [`HeidiSQL`](https://github.com/HeidiSQL/HeidiSQL)           | *    | *   |
 | [`RedisDesktopManager`](https://redisdesktop.com/pricing)    |      |      |
 | [`RedisInsight`](https://github.com/RedisInsight/RedisInsight)    | *    | *    |
 | [`phpRedisAdmin`](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
