@@ -49,7 +49,7 @@
 | [`SQL Developer` ](https://www.oracle.com/tools/downloads/sqldev-downloads.html) | *    |      |
 | [`MySQL Workbench`](https://dev.mysql.com/downloads/workbench/) | *    |      |
 | [`SQLyog`](https://www.webyog.com/)                          |      |      |
-| [`HeidiSQL`](https://github.com/HeidiSQL/HeidiSQL)           | *    |      |
+| [`HeidiSQL`](https://github.com/HeidiSQL/HeidiSQL)           | *    | *   |
 | [`RedisDesktopManager`](https://redisdesktop.com/pricing)    |      |      |
 | [`RedisInsight`](https://github.com/RedisInsight/RedisInsight)    | *    | *    |
 | [`phpRedisAdmin`](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
@@ -120,6 +120,10 @@
 - Windows XP浏览器
 
 [`Chrome49.0.2623.112`](https://dl.google.com/release2/h8vnfiy7pvn3lxy9ehfsaxlrnnukgff8jnodrp0y21vrlem4x71lor5zzkliyh8fv3sryayu5uk5zi20ep7dwfnwr143dzxqijv/49.0.2623.112_chrome_installer.exe) [`Firefox52.9.0esr`](https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/) [`360极速浏览器`](https://browser.360.cn/ee/index.html) 
+
+- Windows 7浏览器
+
+[`Chrome109`]() 
 
 - 虚拟机
 
