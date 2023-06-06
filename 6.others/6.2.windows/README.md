@@ -27,7 +27,7 @@
 
 - 工具集合
 
-[`PowerToys`](https://github.com/microsoft/PowerToys) [`Sysinternals`](https://docs.microsoft.com/zh-cn/sysinternals/) [`DevToys`](https://github.com/veler/DevToys) [`CyberChef`](https://github.com/gchq/CyberChef) 
+[`PowerToys`](https://github.com/microsoft/PowerToys) [`Sysinternals`](https://docs.microsoft.com/zh-cn/sysinternals/) [`DevToys`](https://github.com/veler/DevToys) [`CyberChef`](https://github.com/gchq/CyberChef) [eSearch](https://github.com/xushengfeng/eSearch) 
 
 - PowerShell
 
@@ -107,9 +107,11 @@
 | [`Sublime`](https://www.sublimetext.com/3)                  | *    |      |
 | [`Typora`](https://www.typora.io/)                          | *    |      |
 | [`Boostnote`](https://github.com/BoostIO/Boostnote)         | *    | *    |
-| [`CudaText`](http://uvviewsoft.com/cudatext/download.html)  | *    |      |
+| [`CudaText`](https://github.com/Alexey-T/CudaText)          | *    | *    |
 | [`stackedit`](https://github.com/benweet/stackedit)         | *    | *    |
 | [`思源笔记`](https://github.com/siyuan-note/siyuan)         | *    | *    |
+| [`fleet`](https://www.jetbrains.com.cn/en-us/fleet/)        | *    | *    |
+
 
 - 浏览器
 
@@ -117,7 +119,7 @@
 
 - Windows XP浏览器
 
-[`Chrome49.0.2623.112`](https://dl.google.com/release2/h8vnfiy7pvn3lxy9ehfsaxlrnnukgff8jnodrp0y21vrlem4x71lor5zzkliyh8fv3sryayu5uk5zi20ep7dwfnwr143dzxqijv/49.0.2623.112_chrome_installer.exe) [`Firefox52.9.0esr`](https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/) 
+[`Chrome49.0.2623.112`](https://dl.google.com/release2/h8vnfiy7pvn3lxy9ehfsaxlrnnukgff8jnodrp0y21vrlem4x71lor5zzkliyh8fv3sryayu5uk5zi20ep7dwfnwr143dzxqijv/49.0.2623.112_chrome_installer.exe) [`Firefox52.9.0esr`](https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/) [`360极速浏览器`](https://browser.360.cn/ee/index.html) 
 
 - 虚拟机
 
@@ -127,9 +129,9 @@
 
 [`TeamViewer`](https://www.teamviewer.cn/cn/download/windows/) [`向日葵`](https://sunlogin.oray.com/download/) [`ToDesk`](https://www.todesk.com/download.html) 
 
-- 压缩工具
+- 压缩/解压缩工具
 
-[`7-Zip`](https://www.7-zip.org/download.html) [`360压缩`](https://yasuo.360.cn/) [`PeaZip`](https://github.com/peazip/PeaZip) 
+[`7-Zip`](https://www.7-zip.org/download.html) [`360压缩`](https://yasuo.360.cn/) [`PeaZip`](https://github.com/peazip/PeaZip) [`NanaZip`](https://github.com/M2Team/NanaZip) 
 
 - 文件/文件夹搜索
 
@@ -153,7 +155,7 @@
 
 - 录屏工具
 
-[`QQ录屏`]() [`TimeCat(网页录屏)`](https://github.com/oct16/TimeCat) 
+[`QQ录屏`]() [`TimeCat(网页录屏)`](https://github.com/oct16/TimeCat) [`Screen Recorder by Omi`](https://omiapps.com/) 
 
 - 图片压缩
 
@@ -178,6 +180,10 @@
 - 笔记
 
 [`印象笔记`](https://www.yinxiang.com/) [`有道云笔记`](https://note.youdao.com/) [`OneNote`](https://www.onenote.com/download) 
+
+- 视频播放
+
+[`VLC`](https://www.videolan.org/) [`mpv`](https://mpv.io/installation/) [`Cisdem Video Player`](https://www.cisdem.com/video-player.html) [`5KPlayer`](https://www.5kplayer.com/) [`DivX`](https://www.divx.com/) 
 
 - 翻译
 

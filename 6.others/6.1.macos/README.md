@@ -12,7 +12,7 @@
 
 - 工具集合
 
-[`DevToysMac`](https://github.com/ObuchiYuki/DevToysMac) [`CyberChef`](https://github.com/gchq/CyberChef) [`Alfred`](https://www.alfredapp.com/) [`uTools`](https://www.u-tools.cn/) 
+[`DevToysMac`](https://github.com/ObuchiYuki/DevToysMac) [`CyberChef`](https://github.com/gchq/CyberChef) [`Alfred`](https://www.alfredapp.com/) [`uTools`](https://www.u-tools.cn/) [eSearch](https://github.com/xushengfeng/eSearch) 
 
 - 用于替换bash
 
@@ -34,7 +34,7 @@
 | [Sequel Pro](https://github.com/sequelpro/sequelpro)         | *    | *    |
 | [Sequel-Ace](https://github.com/Sequel-Ace/Sequel-Ace)       | *    | *    |
 | [RedisDesktopManager](https://redisdesktop.com/pricing)      |      |      |
-| [`RedisInsight`](https://github.com/RedisInsight/RedisInsight)    | *    | *    |
+| [RedisInsight](https://github.com/RedisInsight/RedisInsight) | *    | *    |
 | [phpRedisAdmin](https://github.com/ErikDubbelboer/phpRedisAdmin) | *    | *    |
 | [TablePlus](https://tableplus.com/)                          |      |      |
 | [pgAdmin](https://www.pgadmin.org/download/)                 | *    | *    |
@@ -60,7 +60,7 @@
 
 - 编辑工具
 
-[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](http://uvviewsoft.com/cudatext/download.html) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) [`CodeEdit`](https://github.com/CodeEditApp/CodeEdit) 
+[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](https://github.com/Alexey-T/CudaText) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) [`CodeEdit`](https://github.com/CodeEditApp/CodeEdit) [`fleet`](https://www.jetbrains.com.cn/en-us/fleet/) 
 
 - 浏览器
 
@@ -74,9 +74,9 @@
 
 [`TeamViewer`](https://www.teamviewer.cn/cn/download/mac-os/) [`向日葵`](https://sunlogin.oray.com/download/) [`ToDesk`](https://www.todesk.com/download.html) 
 
-- 压缩工具
+- 压缩/解压缩工具
 
-[`Keka`](https://github.com/aonez/Keka) [`The Unarchiver`](https://www.theunarchiver.com/) [`360压缩`](https://yasuo.360.cn/) 
+[`Keka`](https://github.com/aonez/Keka) [`The Unarchiver`](https://www.theunarchiver.com/) [`360压缩`](https://yasuo.360.cn/) [`7-Zip`](https://7-zip.org/download.html) [`eZip/MacZip`](https://ezip.awehunt.com/) 
 
 - 截图工具
 
@@ -88,7 +88,7 @@
 
 - 录屏工具
 
-[`QQ录屏`]() [`iShot`](https://www.better365.cn/) [`TimeCat(网页录屏)`](https://github.com/oct16/TimeCat) 
+[`QQ录屏`]() [`iShot`](https://www.better365.cn/) [`TimeCat(网页录屏)`](https://github.com/oct16/TimeCat) [`Screen Recorder by Omi`](https://omiapps.com/) 
 
 - 图片压缩
 
@@ -116,7 +116,7 @@
 
 - 视频播放
 
-[`IINA`](https://github.com/iina/iina) [`ZY-Player`](https://github.com/Hunlongyu/ZY-Player) 
+[`IINA`](https://github.com/iina/iina) [`ZY-Player`](https://github.com/Hunlongyu/ZY-Player) [`VLC`](https://www.videolan.org/) [`mpv`](https://mpv.io/installation/) [`Fig Player`](https://omiapps.com/) [`Elmedia Player`](https://mac.eltima.com/video-player.html) [`Cisdem Video Player`](https://www.cisdem.com/video-player.html) [`JustPlay`](https://www.electronic.us/just-play.html) [`5KPlayer`](https://www.5kplayer.com/) [`DivX`](https://www.divx.com/) [`Infuse`](https://firecore.com/) [`Movist`](https://movistprime.com/) 
 
 - 文档浏览
 
@@ -124,7 +124,7 @@
 
 - NTFS
 
-[`osxfuse`](https://github.com/osxfuse/osxfuse) [`Tuxera`](https://www.ntfsformac.cc/xiazai.html) [`Paragon`](https://www.ntfsformac.cn/xiazai.html) [`Mounty`](https://mounty.app/) [`ntfstool`](https://github.com/ntfstool/ntfstool) [`ntfs-3g`](https://github.com/tuxera/ntfs-3g) 
+[`osxfuse`](https://github.com/osxfuse/osxfuse) [`Tuxera`](https://www.ntfsformac.cc/xiazai.html) [`Paragon`](https://www.ntfsformac.cn/xiazai.html) [`Mounty`](https://mounty.app/) [`ntfstool`](https://github.com/ntfstool/ntfstool) [`ntfs-3g`](https://github.com/tuxera/ntfs-3g) [`NTFS Disk by Omi`](https://omiapps.com/) 
 
 - 翻译
 
