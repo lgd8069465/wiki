@@ -8,14 +8,15 @@
 
 - 用于替换cmd
 
-| 名称                                                        | 免费 | 开源 |
-| ----------------------------------------------------------- | ---- | ---- |
-| [`cmder`](https://github.com/cmderdev/cmder)                | *    | *    |
-| [`Windows Terminal`](https://github.com/microsoft/terminal) | *    | *    |
-| [`alacritty`](https://github.com/alacritty/alacritty)       | *    | *    |
-| [`wezterm`](https://github.com/wez/wezterm)                 | *    | *    |
-| [`kitty`](https://github.com/kovidgoyal/kitty)              | *    | *    |
-| [`hyper`](https://github.com/vercel/hyper)                  | *    | *    |
+| 名称                                                         | 免费 | 开源 |
+| ------------------------------------------------------------ | ---- | ---- |
+| [`cmder`](https://github.com/cmderdev/cmder)                 | *    | *    |
+| [`Windows Terminal`](https://github.com/microsoft/terminal)  | *    | *    |
+| [`alacritty`](https://github.com/alacritty/alacritty)        | *    | *    |
+| [`wezterm`](https://github.com/wez/wezterm)                  | *    | *    |
+| [`kitty`](https://github.com/kovidgoyal/kitty)               | *    | *    |
+| [`hyper`](https://github.com/vercel/hyper)                   | *    | *    |
+| [`FluentTerminal`](https://github.com/felixse/FluentTerminal) | *    | *    |
 
 -  集成安装软件
 
@@ -123,7 +124,7 @@
 
 - Windows 7浏览器
 
-[`Chrome109`]() 
+[`Chrome109`]() [`firefox115.0`](https://www.mozilla.org/en-US/firefox/115.0/system-requirements/) 
 
 - 虚拟机
 
