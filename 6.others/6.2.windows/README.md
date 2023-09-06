@@ -112,6 +112,7 @@
 | [`stackedit`](https://github.com/benweet/stackedit)         | *    | *    |
 | [`思源笔记`](https://github.com/siyuan-note/siyuan)         | *    | *    |
 | [`fleet`](https://www.jetbrains.com.cn/en-us/fleet/)        | *    | *    |
+| [`NotepadNext`](https://github.com/dail8859/NotepadNext)        | *    | *    |
 
 
 - 浏览器

@@ -60,7 +60,7 @@
 
 - 编辑工具
 
-[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](https://github.com/Alexey-T/CudaText) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) [`CodeEdit`](https://github.com/CodeEditApp/CodeEdit) [`fleet`](https://www.jetbrains.com.cn/en-us/fleet/) 
+[`Visual Studio Code`](https://github.com/microsoft/vscode) [`Atom`](https://github.com/atom/atom) [`Sublime`](https://www.sublimetext.com/3) [`Typora`](https://www.typora.io/) [`CotEditor`](https://github.com/coteditor/CotEditor) [`Boostnote`](https://github.com/BoostIO/Boostnote) [`CudaText`](https://github.com/Alexey-T/CudaText) [`stackedit`](https://github.com/benweet/stackedit) [`思源笔记`](https://github.com/siyuan-note/siyuan) [`CodeEdit`](https://github.com/CodeEditApp/CodeEdit) [`fleet`](https://www.jetbrains.com.cn/en-us/fleet/) [`NotepadNext`](https://github.com/dail8859/NotepadNext) 
 
 - 浏览器
 
