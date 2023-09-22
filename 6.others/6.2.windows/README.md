@@ -62,6 +62,13 @@
 | [`mongood`](https://github.com/renzholy/mongood)             | *    | *    |
 | [`tabix`](https://github.com/tabixio/tabix)                  | *    | *    |
 | [`azuredatastudio`](https://github.com/microsoft/azuredatastudio) | *    | *    |
+| [`kangaroo`](https://github.com/dbkangaroo/kangaroo) | *    | *    |
+| [`antares`](https://github.com/antares-sql/antares) | *    | *    |
+| [`MyWebSQL`](https://github.com/Samnan/MyWebSQL) | *    | *    |
+| [`directus`](https://github.com/directus/directus) | *    | *    |
+| [`gh-ost`](https://github.com/github/gh-ost) | *    | *    |
+| [`SQLiteManager`](http://www.sqlitemanager.org/) | *    | *    |
+
 
 - 数据库建模工具
 

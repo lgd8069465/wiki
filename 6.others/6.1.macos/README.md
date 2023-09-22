@@ -40,6 +40,13 @@
 | [pgAdmin](https://www.pgadmin.org/download/)                 | *    | *    |
 | [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio) | *    | *    |
 | [gobang](https://github.com/TaKO8Ki/gobang)                  | *    | *    |
+| [kangaroo](https://github.com/dbkangaroo/kangaroo) | *    | *    |
+| [antares](https://github.com/antares-sql/antares) | *    | *    |
+| [MyWebSQL](https://github.com/Samnan/MyWebSQL) | *    | *    |
+| [directus](https://github.com/directus/directus) | *    | *    |
+| [gh-ost](https://github.com/github/gh-ost) | *    | *    |
+| [SQLiteManager](http://www.sqlitemanager.org/) | *    | *    |
+
 
 - 数据库建模工具
 
